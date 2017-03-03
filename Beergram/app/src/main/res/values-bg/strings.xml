@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Бабоо</string>
+
+    <!--Drawer-->
+    <string name="HomeDrawerItemName">Начало</string>
+    <string name="ProductsDrawerItemName">Продукти</string>
+    <string name="FavouriteDrawerItemName">Любими</string>
+    <string name="CartDrawerItemName">Количка</string>
+    <string name="MyAccountDrawerName">Моят акаунт</string>
+    <string name="NotificationsDrawerName">Известия</string>
+    <string name="AboutUsDrawerItemName">За нас</string>
+    <string name="LoginLogoutDrawerName">Вход/Изход</string>
+
+    <!--App-->
+    <string name="app_title">Бабоо</string>
+    <string name="baba_says">Баба:</string>
+    <string name="baba_speech">Какво искаш баба да ти изплете ?</string>
+
+    <string name="sweater_text">Пуловер</string>
+    <string name="socks_text">Шушони</string>
+    <string name="scarf_text">Шал</string>
+
+    <!--Sweater Customization-->
+    <string name="product_customization_title">Направете продукта, така, както искате да изглежда</string>
+    <string name="product_customization_subtitle">Изберете част, която да персонализирате</string>
+    <string name="product_customization_size_btn">Големина</string>
+
+    <string name="baby_size_0_6">0-6м</string>
+    <string name="baby_size_6_12">6м-12м</string>
+    <string name="baby_size_12_18">12м-18м</string>
+    <string name="baby_size_18_2">18м-2г</string>
+
+    <string name="adult_size_xs">XS</string>
+    <string name="adult_size_s">S</string>
+    <string name="adult_size_m">M</string>
+    <string name="adult_size_l">L</string>
+    <string name="adult_size_xl">XL</string>
+    <string name="adult_size_xxl">XXL</string>
+
+    <string name="selected_size_text">Избарана големина:</string>
+
+    <string name="baby_size_0_6_text">Бебе 0-6m</string>
+    <string name="baby_size_6_12_text">Бебе 6m-12m</string>
+    <string name="baby_size_12_18_text">Бебе 12m-18m</string>
+    <string name="baby_size_18_2_text">Бебе 18m-2y</string>
+
+    <string name="adult_m_size_xs_text">Мъжко XS</string>
+    <string name="adult_m_size_s_text">Мъжко S</string>
+    <string name="adult_m_size_m_text">Мъжко M</string>
+    <string name="adult_m_size_l_text">Мъжко L</string>
+    <string name="adult_m_size_xl_text">Мъжко XL</string>
+    <string name="adult_m_size_xxl_text">Мъжко XXL</string>
+
+    <string name="adult_f_size_xs_text">Дамско XS</string>
+    <string name="adult_f_size_s_text">Дамско S</string>
+    <string name="adult_f_size_m_text">Дамско M</string>
+    <string name="adult_f_size_l_text">Дамско L</string>
+    <string name="adult_f_size_xl_text">Дамско XL</string>
+    <string name="adult_f_size_xxl_text">Дамско XXL</string>
+
+    <!--Onboarding-->
+    <string name="onboarding_first_Screen">Добре дошли при Баба!\n\nГотините баби ще ти оплетат пуловер, чорапи или шал. И дизайнерът ще бъдеш ТИ.</string>
+    <string name="onboarding_second_Screen">Избери свой собствен дизайн</string>
+    <string name="onboarding_third_Screen">Получи до входната врата</string>
+
+    <!--AUTH-->
+    <string name="email_example_text">Имейл</string>
+    <string name="password_example_text">Парола</string>
+    <string name="login_btn_text">Вход</string>
+    <string name="no_account_text">Все още нямаш акаунт? Направи сега.</string>
+    <string name="forgot_password_text">Забравена парола</string>
+
+    <string name="first_name_text">Първо име</string>
+    <string name="last_name_text">Фамилия</string>
+    <string name="address_optional_text">Адрес(полето не е задължително)</string>
+    <string name="register_btn_text">Регистрирай</string>
+    <string name="register_form_title_text">Регистрация</string>
+    <string name="login_form_title_text">Вход</string>
+    <string name="repeat_password_text">Повтори паролата</string>
+    <string name="user_created_notify_message">" - Успешна регистрация и вход."</string>
+    <string name="user_loggedin_notify_message">" Успешен вход"</string>
+    <string name="loading_creating_user_text">Създава се акаунт…</string>
+    <string name="loading_logging_in_text">Влизане…</string>
+    <string name="loading_text">Зареждане..</string>
+    <string name="loading_no_text" />
+    <string name="logout_btn_text">Изход</string>
+    <string name="logout_form_title_text">Изход? При баба е хубаво, сигурни ли сте, че искате да излезете?!</string>
+    <string name="loading_logging_out_text">Излизане…</string>
+    <string name="address_text">Адрес</string>
+    <string name="bad_email_text">Мола въведете валиден имейл</string>
+    <string name="bad_first_name_text">Първото име трябва да съдържа поне 2 символа</string>
+    <string name="bad_last_name_text">Фамилията трябва да съдържа поне 2 символа</string>
+    <string name="reauthentication_message_text">Докажи, че не си някой друг</string>
+    <string name="bad_credentials_message_text">Невалиден имейл или парола</string>
+    <string name="bad_password_text">Невалидна парола</string>
+    <string name="confirm_text">Потвърди</string>
+    <string name="cancel_text">Отказ</string>
+    <string name="bad_confirm_password_text">Паролите не съвпадат</string>
+    <string name="save_text">Запази</string>
+    <string name="personal_info_text">Лична информация</string>
+    <string name="learn_as_you_go">Научи още</string>
+
+    <string-array name="profile_picture_resource_picker">
+        <item>Галерия</item>
+        <item>Снимай</item>
+    </string-array>
+
+
+</resources>

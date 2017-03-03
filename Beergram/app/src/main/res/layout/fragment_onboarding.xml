@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.leagueofthetwo.babuu.onboarding.OnboardingFragment" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/section_img"
+            android:layout_width="192dp"
+            android:layout_height="192dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:alpha="0.30"
+            android:background="@drawable/ic_onboarding_knitting"
+            android:scaleType="fitCenter" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:id="@+id/section_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="30dp"
+            android:alpha="1"
+            android:gravity="center"
+            android:text="@string/onboarding_first_Screen"
+            android:textColor="@android:color/white" />
+
+
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+
+
+                <LinearLayout
+                    android:layout_width="@dimen/coloumn_width_size_modal_three_coloumns"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_baby" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dip"
+                        android:background="#d1d1d1" />
+
+                    <Button
+                        android:id="@+id/btn_baby_size_0_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/baby_size_0_6" />
+
+                    <Button
+                        android:id="@+id/btn_baby_size_6_12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/baby_size_6_12" />
+
+                    <Button
+                        android:id="@+id/btn_baby_size_12_18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/baby_size_12_18" />
+
+                    <Button
+                        android:id="@+id/btn_baby_size_18_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/baby_size_18_2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="@dimen/coloumn_width_size_modal_three_coloumns"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_male_adult_face" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dip"
+                        android:background="#d1d1d1" />
+
+                    <Button
+                        android:id="@+id/btn_male_adult_size_xs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/adult_size_xs" />
+
+                    <Button
+                        android:id="@+id/btn_male_adult_size_s"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/adult_size_s" />
+
+                    <Button
+                        android:id="@+id/btn_male_adult_size_m"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/adult_size_m" />
+
+                    <Button
+                        android:id="@+id/btn_male_adult_size_l"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/adult_size_l" />
+
+                    <Button
+                        android:id="@+id/btn_male_adult_size_xl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/adult_size_xl" />
+
+                    <Button
+                        android:id="@+id/btn_male_adult_size_xxl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/adult_size_xxl" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="@dimen/coloumn_width_size_modal_three_coloumns"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_female_adult_face" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dip"
+                        android:background="#d1d1d1" />
+
+                    <Button
+                        android:id="@+id/btn_female_adult_size_xs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/adult_size_xs" />
+
+                    <Button
+                        android:id="@+id/btn_female_adult_size_s"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/adult_size_s" />
+
+                    <Button
+                        android:id="@+id/btn_female_adult_size_m"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/adult_size_m" />
+
+                    <Button
+                        android:id="@+id/btn_female_adult_size_l"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/adult_size_l" />
+
+                    <Button
+                        android:id="@+id/btn_female_adult_size_xl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/adult_size_xl" />
+
+                    <Button
+                        android:id="@+id/btn_female_adult_size_xxl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/adult_size_xxl" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/selected_size_text"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_selected_size_modal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/colorCoolBlue"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

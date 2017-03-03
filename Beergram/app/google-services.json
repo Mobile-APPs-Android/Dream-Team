@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "647948409394",
+    "firebase_url": "https://babuu-b9f70.firebaseio.com",
+    "project_id": "babuu-b9f70",
+    "storage_bucket": "babuu-b9f70.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647948409394:android:6dd5b00723e4a9df",
+        "android_client_info": {
+          "package_name": "com.example.leagueofthetwo.babuu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "647948409394-d15nu2shabuk112bkv2ceft2jnskjpj2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.leagueofthetwo.babuu",
+            "certificate_hash": "CE5CAF9500ADC395BB5959596670F4E74BA5E605"
+          }
+        },
+        {
+          "client_id": "647948409394-cqmajti807rv7rs2k45989pamf35mk3k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfsw5YUJwpOdxtLBjye87vLjhN20llxgw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "647948409394-cqmajti807rv7rs2k45989pamf35mk3k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,57 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="@Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--Product customization-->
+    <style name="CustomizationTitleText">
+        <item name="android:textSize">30dp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="CustomizationSubtitletext">
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="CustomizationSizeBtn">
+        <item name="android:shadowColor">#A8A8A8</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+         <item name="android:shadowRadius">5</item>
+         <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <!--Home-->
+    <style name="homeBtn" >
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:layout_margin">2dp</item>
+    </style>
+
+    <style name="babaSaysText">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+    <style name="babaSpeechText">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="productTypeText">
+        <item name="android:textSize">25dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+    </style>
+
+    <style name="DialogTheme">
+        <item name="android:windowEnterAnimation">@anim/slide_left</item>
+        <item name="android:windowExitAnimation">@anim/slide_right</item>
+    </style>
+
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="HomeDrawerItemIdentifier">1</integer>
+    <integer name="ProductsDrawerItemIdentifier">2</integer>
+    <integer name="FavouriteDrawerItemIdentifier">3</integer>
+    <integer name="CartDrawerItemIdentifier">4</integer>
+    <integer name="MyAccountDrawerItemIdentifier">5</integer>
+    <integer name="NotificationsDrawerItemIdentifier">6</integer>
+    <integer name="AboutUsDrawerItemIdentifier">7</integer>
+    <integer name="LoginLogoutDrawerItemIdentifier">8</integer>
+    <integer name="conf_shortAnimTime">17694720</integer>
+</resources>
+
