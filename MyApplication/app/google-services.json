@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "711557212777",
+    "firebase_url": "https://beergram-c1de0.firebaseio.com",
+    "project_id": "beergram-c1de0",
+    "storage_bucket": "beergram-c1de0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:711557212777:android:a50a0bf4cde6a14f",
+        "android_client_info": {
+          "package_name": "com.example.prot3.beergram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "711557212777-7228m67u48etr9lmtp88ti9a0p1agmqe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.prot3.beergram",
+            "certificate_hash": "dcced53409f2245010bd28e4d1ef61a586adfe6e"
+          }
+        },
+        {
+          "client_id": "711557212777-r2eeuv4oanbar72ifk1l5kee61c4uteq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYv6TFFL7jjc342xJCDgitNleFRYCA-YE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "711557212777-r2eeuv4oanbar72ifk1l5kee61c4uteq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
