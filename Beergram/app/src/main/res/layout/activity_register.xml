@@ -12,11 +12,6 @@
     android:background="@color/colorCoolBlue"
     tools:context="com.example.leagueofthetwo.babuu.auth.register.RegisterActivity">
 
-    <fragment
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:name="com.example.leagueofthetwo.babuu.drawer.DrawerFragment" />
-
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
