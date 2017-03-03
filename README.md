@@ -19,7 +19,7 @@ Created Line-of-business (LoB) Application Design and implement a native mobile 
 
 ### Beergram
 
-This application is specially developed for Beer lovers. The main idea is to help users to find cool places to drink beer, to have better communication, easier life, and positive emotions. If you are Beer lover and don't have enough time for research the nearest, good places for beer. If you have to orginize an frind event, if you have a date or just free time to take one beer etc. Here is the simple solve of everything!
+This application is specially developed for Beer lovers. The main idea is to help users to find cool places to drink beer, to have better communication, easier life, and positive emotions. If you are Beer lover and don't have enough time to research the nearest, good places for beer. If you have to organize an event, if you have a date or just free time to take one beer etc. Here is the simple solve of everything!
 
 ### BEER ON THE GO APP
 This app would be popular among many men and women alike. With GPS capabilities, you would be able to locate the nearest bar, pub in that area.
