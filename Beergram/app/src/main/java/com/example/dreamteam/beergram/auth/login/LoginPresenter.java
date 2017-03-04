@@ -42,12 +42,12 @@ public class LoginPresenter implements LoginContract.Presenter {
 
     @Override
     public void loginUser(String email, String password) {
-        mView.showDialogForLoggingUser();
-
         if(email.isEmpty() || email == null || password.isEmpty() || password == null) {
+            mView.notoifyBadEmailOrPassword();
             return;
         }
 
+        mView.showDialogForLoggingUser();
         mRepository.loginUser(email, password)
                 .observeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

@@ -12,10 +12,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.dreamteam.beergram.logged.LoggedActivity;
 import com.example.dreamteam.beergram.R;
 import com.example.dreamteam.beergram.auth.logout.LogoutActivity;
 import com.example.dreamteam.beergram.auth.register.RegisterActivity;
+import com.example.dreamteam.beergram.camera.CameraActivity;
 import com.example.dreamteam.beergram.utils.BeergramProgressDialog;
 
 /**
@@ -34,7 +34,6 @@ public class LoginFragment extends Fragment implements LoginContract.View {
     private BeergramProgressDialog mDialog;
 
     public LoginFragment() {
-        // Required empty public constructor
     }
 
     public static LoginFragment newInstance() {
@@ -108,7 +107,7 @@ public class LoginFragment extends Fragment implements LoginContract.View {
 
     @Override
     public void showHomeActivity() {
-        Intent intent = new Intent(mContext, LoggedActivity.class);
+        Intent intent = new Intent(mContext, CameraActivity.class);
 
         getActivity().finish();
 

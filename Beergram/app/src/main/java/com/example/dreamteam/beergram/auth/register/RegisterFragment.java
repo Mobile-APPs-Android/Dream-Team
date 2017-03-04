@@ -13,8 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.example.dreamteam.beergram.logged.LoggedActivity;
 import com.example.dreamteam.beergram.R;
+import com.example.dreamteam.beergram.camera.CameraActivity;
 import com.example.dreamteam.beergram.utils.BeergramProgressDialog;
 
 public class RegisterFragment extends Fragment implements RegisterContract.View {
@@ -114,7 +114,7 @@ public class RegisterFragment extends Fragment implements RegisterContract.View 
 
     @Override
     public void showHomeActivity() {
-        Intent accountIntent = new Intent(mContext, LoggedActivity.class);
+        Intent accountIntent = new Intent(mContext, CameraActivity.class);
 
         getActivity().finish();
 
