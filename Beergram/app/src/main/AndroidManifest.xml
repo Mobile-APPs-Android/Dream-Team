@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
 
     <application
         android:name=".BeergramApplication"
@@ -16,19 +18,30 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 <<<<<<< HEAD
+        <activity android:name=".auth.login.LoginActivity"/>
+        <activity android:name=".camera.CameraActivity">
+=======
+<<<<<<< HEAD
         <activity android:name=".auth.login.LoginActivity">
 =======
         <activity android:name=".newsfeed.NewsfeedActivity">
 >>>>>>> origin/master
+>>>>>>> d648822faa3a0638adcad61002be0333b07e59ff
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--<activity android:name=".auth.login.LoginActivity"/>-->
         <activity android:name=".auth.register.RegisterActivity" />
-        <activity android:name=".logged.LoggedActivity" />
         <activity android:name=".auth.logout.LogoutActivity" />
+<<<<<<< HEAD
+        <!--<activity android:name=".newsfeed.NewsfeedActivity"/>-->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAumtVmmQWTNQCnwOf_QTKpgzcb4iBo2lE" />
+=======
         <activity android:name=".camera.CameraActivity"></activity>
 
         <meta-data
@@ -39,6 +52,7 @@
 =======
         <!-- <activity android:name=".newsfeed.NewsfeedActivity"></activity>-->
 >>>>>>> origin/master
+>>>>>>> d648822faa3a0638adcad61002be0333b07e59ff
     </application>
 
 </manifest>
