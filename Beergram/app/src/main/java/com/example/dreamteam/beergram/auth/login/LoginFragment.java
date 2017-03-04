@@ -16,7 +16,7 @@ import android.widget.Toast;
 import com.example.leagueofthetwo.babuu.R;
 import com.example.leagueofthetwo.babuu.auth.logout.LogoutActivity;
 import com.example.leagueofthetwo.babuu.auth.register.RegisterActivity;
-import com.example.leagueofthetwo.babuu.logged.LoggedActivity;
+import com.example.dreamteam.beergram.logged.LoggedActivity;
 import com.example.leagueofthetwo.babuu.utils.BabuuProgressDialog;
 =======
 import com.example.dreamteam.beergram.R;

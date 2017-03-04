@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Babuu</string>
+    <string name="app_name">Beergram</string>
 
     <!--Drawer-->
     <string name="HomeDrawerItemName">Home</string>

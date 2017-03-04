@@ -1,4 +1,4 @@
-package com.example.leagueofthetwo.babuu.logged;
+package com.example.dreamteam.beergram.logged;
 
 import android.os.Bundle;
 import android.app.Activity;

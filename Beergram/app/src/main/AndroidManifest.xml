@@ -22,14 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
         <activity android:name=".auth.register.RegisterActivity" />
         <activity android:name=".logged.LoggedActivity" />
         <activity android:name=".auth.logout.LogoutActivity" />
-=======
-        <activity android:name="com.example.dreamteam.beergram.auth.register.RegisterActivity" />
-        <activity android:name="com.example.dreamteam.beergram.auth.logout.LogoutActivity" />
->>>>>>> origin/master
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

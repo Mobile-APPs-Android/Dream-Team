@@ -15,11 +15,10 @@ import android.widget.Toast;
 <<<<<<< HEAD:Beergram/app/src/main/java/com/example/leagueofthetwo/babuu/auth/register/RegisterFragment.java
 import com.example.leagueofthetwo.babuu.R;
 import com.example.leagueofthetwo.babuu.auth.login.LoginActivity;
-import com.example.leagueofthetwo.babuu.logged.LoggedActivity;
+import com.example.dreamteam.beergram.logged.LoggedActivity;
 import com.example.leagueofthetwo.babuu.utils.BabuuProgressDialog;
 =======
 import com.example.dreamteam.beergram.R;
-import com.example.dreamteam.beergram.auth.login.LoginActivity;
 import com.example.dreamteam.beergram.utils.BeergramProgressDialog;
 >>>>>>> origin/master:Beergram/app/src/main/java/com/example/dreamteam/beergram/auth/register/RegisterFragment.java
 

@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.example.dreamteam.beergram.data.DaggerRepositoryComponent;
 import com.example.dreamteam.beergram.data.RepositoryComponent;
+import com.example.leagueofthetwo.babuu.data.DaggerRepositoryComponent;
 
 public class BeergramApplication extends Application {
 
