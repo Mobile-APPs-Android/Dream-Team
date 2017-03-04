@@ -3,6 +3,10 @@ package com.example.dreamteam.beergram.camera;
 import com.example.dreamteam.beergram.BasePresenter;
 import com.example.dreamteam.beergram.BaseView;
 
+import java.io.File;
+
+import pl.aprilapps.easyphotopicker.EasyImage;
+
 
 public interface CameraContract {
 
@@ -13,7 +17,7 @@ public interface CameraContract {
 //
 //        void showResetPasswordActivity();
 //
-//        void showHomeActivity();
+            void showNewsFeedActivity();
 //
 //        void showLogoutActivity();
 //
@@ -29,6 +33,6 @@ public interface CameraContract {
     }
 
     interface Presenter extends BasePresenter {
-
+        void saveImage(File imageFile, EasyImage.ImageSource source);
     }
 }

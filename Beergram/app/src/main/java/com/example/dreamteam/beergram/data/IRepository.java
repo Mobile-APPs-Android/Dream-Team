@@ -16,5 +16,4 @@ public interface IRepository {
     Observable<User> updateAccountInfo(String firstName, String lastName, String email, String address, String credentialsEmail, String credentialsPassword);
 
     Observable<Boolean> getIsFirstTimeForUser();
-
 }
