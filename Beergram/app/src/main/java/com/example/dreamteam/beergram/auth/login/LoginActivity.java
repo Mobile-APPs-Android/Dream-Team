@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         DaggerLoginComponent
                 .builder()
                 .repositoryComponent(((BeergramApplication)getApplication())
-                        .getRepositoryComponent())
+                .getRepositoryComponent())
                 .loginModule(new LoginModule(loginFragment))
                 .build()
                 .inject(this);

@@ -10,7 +10,7 @@ import io.reactivex.schedulers.Schedulers;
 public class LoginPresenter implements LoginContract.Presenter {
 
     private final IRepository mRepository;
-    LoginContract.View mView;
+    private LoginContract.View mView;
 
     @Inject
     public LoginPresenter(LoginContract.View view, IRepository repository) {

@@ -9,7 +9,7 @@ import javax.inject.Inject;
 public class SqlLiteDb extends SQLiteOpenHelper implements ILocalDbRepository {
 
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "babuuDb";//TODO: why we use SqlLiteDb, rename it
+    private static final String DATABASE_NAME = "Beergramdb";
 
     private static final String ORDERS_TABLE_NAME = "Orders";
 

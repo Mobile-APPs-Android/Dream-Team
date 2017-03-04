@@ -42,17 +42,19 @@ public class FirebaseAuthProvider implements IAuthProvider {
         return Observable.create(new ObservableOnSubscribe<User>() {
             @Override
             public void subscribe(ObservableEmitter<User> e) throws Exception {
+                Log.d("asdf", email);
+                Log.d("asdf", password);
                 mAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(task -> {
-                            if (task.isSuccessful()) {
-                                FirebaseUser user = mAuth.getCurrentUser();
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            FirebaseUser user = mAuth.getCurrentUser();
 
-                                User newUser = new User(email, firstName, lastName, address);
-                                mUsersData.child(user.getUid()).setValue(newUser);
+                            User newUser = new User(email, firstName, lastName, address);
+                            mUsersData.child(user.getUid()).setValue(newUser);
 
-                                e.onNext(newUser);
-                            }
-                        });
+                            e.onNext(newUser);
+                        }
+                    });
             }
         });
 
