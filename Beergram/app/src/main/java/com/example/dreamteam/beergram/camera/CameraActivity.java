@@ -1,14 +1,10 @@
 package com.example.dreamteam.beergram.camera;
 
-import android.graphics.Camera;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.dreamteam.beergram.BeergramApplication;
 import com.example.dreamteam.beergram.R;
-
-import pl.aprilapps.easyphotopicker.EasyImage;
 
 public class CameraActivity extends AppCompatActivity {
 

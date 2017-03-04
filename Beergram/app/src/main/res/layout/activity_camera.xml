@@ -16,4 +16,9 @@
         android:layout_height="match_parent"
         android:name="com.example.dreamteam.beergram.camera.CameraFragment"/>
 
+    <!--<ImageView
+        android:id="@+id/ivCamera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" /> -->
+
 </RelativeLayout>
