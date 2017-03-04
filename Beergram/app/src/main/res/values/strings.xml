@@ -81,7 +81,7 @@
     <string name="loading_text">Loading..</string>
     <string name="loading_no_text" />
     <string name="logout_btn_text">Logout</string>
-    <string name="logout_form_title_text">Logout? Are you sure about that?!</string>
+    <string name="logout_form_title_text">Are you sure you want to logout?</string>
     <string name="loading_logging_out_text">Logging out…</string>
     <string name="address_text">Address</string>
     <string name="bad_email_text">Enter a valid email address</string>

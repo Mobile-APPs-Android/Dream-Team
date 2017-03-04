@@ -43,6 +43,10 @@
     <color name="orange">#FF9800</color>
     <color name="deep_orange">#FF5722</color>
 
+    <!--COLORS-->
+    <color name="btn_bg">#26A69A</color>
+    <color name="bg_activities">#212121</color>
+
 
     <color name="primary">#E43F3F</color>
     <color name="primary_dark">#E12929</color>
