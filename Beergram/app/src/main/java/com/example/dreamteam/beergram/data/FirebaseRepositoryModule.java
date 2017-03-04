@@ -18,23 +18,14 @@ import dagger.Provides;
 @Module
 public class FirebaseRepositoryModule {
     private static final String USERS_DB_CHILD_STRING = "users";
-    private static final String ORDERS_DB_CHILD_STRING = "orders";
-
-    private static final String ORDERS_PICTURES_CHILD_STRING = "orders";
 
     private final FirebaseAuth mAuth;
     private final FirebaseAuth.AuthStateListener mAuthListener;
 
-    private final DatabaseReference mOrdersData;
     private final DatabaseReference mUsersData;
-
-    private final StorageReference mOrdersPicturesData;
 
     public FirebaseRepositoryModule() {
         mUsersData = FirebaseDatabase.getInstance().getReference().child(USERS_DB_CHILD_STRING);
-        mOrdersData = FirebaseDatabase.getInstance().getReference().child(ORDERS_DB_CHILD_STRING);
-
-        mOrdersPicturesData = FirebaseStorage.getInstance().getReference().child(ORDERS_PICTURES_CHILD_STRING);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -65,18 +56,5 @@ public class FirebaseRepositoryModule {
     @Named("usersData")
     DatabaseReference provideUserDataReference() {
         return mUsersData;
-    }
-
-    @Singleton
-    @Provides
-    @Named("ordersData")
-    DatabaseReference provideOrdersDataReference() {
-        return mOrdersData;
-    }
-
-    @Singleton
-    @Provides
-    StorageReference provideOrdersPicturesDataReference() {
-        return mOrdersPicturesData;
     }
 }

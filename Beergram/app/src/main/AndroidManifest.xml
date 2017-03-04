@@ -15,7 +15,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.dreamteam.beergram.auth.login.LoginActivity">
+        <activity android:name=".auth.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

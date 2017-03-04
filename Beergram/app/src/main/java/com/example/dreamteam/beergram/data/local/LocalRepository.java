@@ -4,10 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.example.dreamteam.beergram.data.local.LocalDb.ILocalDbRepository;
-import com.example.dreamteam.beergram.models.Order;
 import com.example.dreamteam.beergram.models.User;
-
-import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -61,52 +58,6 @@ public class LocalRepository implements ILocalRepository {
                 }
 
                 e.onNext(isFirstTime);
-            }
-        });
-    }
-
-    @Override
-    public Observable<Order> getOrderById(String id) {
-        return Observable.create(e -> e.onNext(mLocalDbRepository.getOrderById(id)));
-    }
-
-    @Override
-    public Observable<List<Order>> getCurrentUserOrders() {
-        return Observable.create(e -> e.onNext(mLocalDbRepository.getAllOrders()));
-    }
-
-    @Override
-    public Observable<Boolean> addOrder(Order order) {
-        return Observable.create(e -> {
-            try {
-                mLocalDbRepository.addOrder(order);
-                e.onNext(true);
-            } catch (Throwable thr) {
-                e.onNext(false);
-            }
-        });
-    }
-
-    @Override
-    public Observable<Boolean> addManyOrders(Order[] orders) {
-        return Observable.create(e -> {
-            try {
-                mLocalDbRepository.addManyOrders(orders);
-                e.onNext(true);
-            } catch (Throwable thr) {
-                e.onNext(false);
-            }
-        });
-    }
-
-    @Override
-    public Observable<Boolean> cleanOrders() {
-        return Observable.create(e -> {
-            try {
-                mLocalDbRepository.cleanOrders();
-                e.onNext(true);
-            } catch (Throwable thr) {
-                e.onNext(false);
             }
         });
     }

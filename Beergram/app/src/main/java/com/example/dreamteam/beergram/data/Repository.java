@@ -3,7 +3,6 @@ package com.example.dreamteam.beergram.data;
 import com.example.dreamteam.beergram.data.authprovider.IAuthProvider;
 import com.example.dreamteam.beergram.data.local.ILocalRepository;
 import com.example.dreamteam.beergram.data.remote.IRemoteRepository;
-import com.example.dreamteam.beergram.models.Order;
 import com.example.dreamteam.beergram.models.User;
 import com.example.dreamteam.beergram.utils.IRandomStringProvider;
 
@@ -51,8 +50,6 @@ public class Repository implements IRepository {
                     username[0] = user.getmFirstName();
                     return mLocalRepository.addCurrentUser(user);
                 })
-                .switchMap(isSuccess -> mRemoteRepository.getUserOrders())
-                .switchMap(orders -> mLocalRepository.addManyOrders(orders))
                 .map(isSuccess -> username[0]);
     }
 
@@ -64,8 +61,7 @@ public class Repository implements IRepository {
     @Override
     public Observable<Boolean> logoutUser() {
         return mAuthProvider.logoutUser()
-                .switchMap(isSuccess -> mLocalRepository.cleanCurrentUser())
-                .switchMap(isSuccess -> mLocalRepository.cleanOrders());
+                .switchMap(isSuccess -> mLocalRepository.cleanCurrentUser());
     }
 
     @Override
@@ -78,23 +74,6 @@ public class Repository implements IRepository {
                 })
                 .switchMap(isSuccess -> mLocalRepository.addCurrentUser(resUser[0]))
                 .switchMap(isSuccess -> mLocalRepository.getCurrentUser());
-    }
-
-    @Override
-    public Observable<Order> saveOrder(Order order) {
-        return mLocalRepository.addOrder(order)
-                .switchMap(isSuccess -> mLocalRepository.getCurrentUser())
-                .switchMap(user -> {
-                    order.setmId(mRandomStringProvider.nextString());
-                    order.setmUserId(user.getmUserId());
-                    return mRemoteRepository.addOrder(order);
-                });
-    }
-
-    @Override
-    public Observable<Order[]> getUserOrders() {
-        return mLocalRepository.getCurrentUserOrders()
-                .switchMap(orders -> Observable.just(orders.toArray(new Order[]{})));
     }
 
     @Override

@@ -1,6 +1,5 @@
 package com.example.dreamteam.beergram.data;
 
-import com.example.dreamteam.beergram.models.Order;
 import com.example.dreamteam.beergram.models.User;
 
 import io.reactivex.Observable;
@@ -15,10 +14,6 @@ public interface IRepository {
     Observable<Boolean> logoutUser();
 
     Observable<User> updateAccountInfo(String firstName, String lastName, String email, String address, String credentialsEmail, String credentialsPassword);
-
-    Observable<Order> saveOrder(Order order);
-
-    Observable<Order[]> getUserOrders();
 
     Observable<Boolean> getIsFirstTimeForUser();
 
