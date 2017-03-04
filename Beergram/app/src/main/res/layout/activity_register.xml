@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     android:background="@color/colorCoolBlue"
-    tools:context="com.example.leagueofthetwo.babuu.auth.register.RegisterActivity">
+    tools:context="com.example.dreamteam.beergram.auth.register.RegisterActivity">
 
     <FrameLayout
         android:id="@+id/fragment_container"
