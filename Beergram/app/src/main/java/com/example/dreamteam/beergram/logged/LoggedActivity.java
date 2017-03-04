@@ -1,9 +1,9 @@
 package com.example.dreamteam.beergram.logged;
 
-import android.os.Bundle;
-import android.app.Activity;
+        import android.os.Bundle;
+        import android.app.Activity;
 
-import com.example.leagueofthetwo.babuu.R;
+        import com.example.dreamteam.beergram.R;
 
 public class LoggedActivity extends Activity {
 
