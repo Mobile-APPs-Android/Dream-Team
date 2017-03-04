@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.example.dreamteam.beergram.BeergramApplication;
 import com.example.dreamteam.beergram.R;
+import com.example.dreamteam.beergram.camera.CameraFragment;
 import com.example.dreamteam.beergram.utils.BeergramProgressDialog;
 
 import javax.inject.Inject;

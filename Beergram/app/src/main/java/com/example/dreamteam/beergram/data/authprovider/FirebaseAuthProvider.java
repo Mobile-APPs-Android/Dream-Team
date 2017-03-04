@@ -1,6 +1,7 @@
 package com.example.dreamteam.beergram.data.authprovider;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.example.dreamteam.beergram.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -51,7 +52,6 @@ public class FirebaseAuthProvider implements IAuthProvider {
 
                                 e.onNext(newUser);
                             }
-
                         });
             }
         });
