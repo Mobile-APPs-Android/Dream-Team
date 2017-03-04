@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.example.leagueofthetwo.babuu"
+        applicationId "com.example.leagueofthetwo.babuu" //TODO: rename ID
         minSdkVersion 23
         targetSdkVersion 25
         versionCode 1
