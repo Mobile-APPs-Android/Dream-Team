@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.leagueofthetwo.babuu.R;
 import com.example.leagueofthetwo.babuu.auth.logout.LogoutActivity;
 import com.example.leagueofthetwo.babuu.auth.register.RegisterActivity;
+import com.example.leagueofthetwo.babuu.logged.LoggedActivity;
 import com.example.leagueofthetwo.babuu.utils.BabuuProgressDialog;
 
 /**
@@ -107,7 +108,7 @@ public class LoginFragment extends Fragment implements LoginContract.View {
 
     @Override
     public void showHomeActivity() {
-        Intent intent = new Intent(mContext, RegisterActivity.class);
+        Intent intent = new Intent(mContext, LoggedActivity.class);
 
         getActivity().finish();
 

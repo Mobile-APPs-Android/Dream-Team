@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.leagueofthetwo.babuu.R;
 import com.example.leagueofthetwo.babuu.auth.login.LoginActivity;
+import com.example.leagueofthetwo.babuu.logged.LoggedActivity;
 import com.example.leagueofthetwo.babuu.utils.BabuuProgressDialog;
 
 public class RegisterFragment extends Fragment implements RegisterContract.View {
@@ -116,7 +117,7 @@ public class RegisterFragment extends Fragment implements RegisterContract.View 
 
     @Override
     public void showHomeActivity() {
-        Intent accountIntent = new Intent(mContext, LoginActivity.class);
+        Intent accountIntent = new Intent(mContext, LoggedActivity.class);
 
         getActivity().finish();
 
