@@ -20,9 +20,9 @@ public class CameraActivity extends AppCompatActivity {
             cameraFragment = CameraFragment.newInstance();
 
             getSupportFragmentManager()
-                .beginTransaction()
-                .add(R.id.fragment_container, cameraFragment)
-                .commit();
+                    .beginTransaction()
+                    .add(R.id.fragment_container, cameraFragment)
+                    .commit();
         }
 
         DaggerCameraComponent
