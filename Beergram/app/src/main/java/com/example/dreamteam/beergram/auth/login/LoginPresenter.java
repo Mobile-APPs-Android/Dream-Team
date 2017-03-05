@@ -35,7 +35,7 @@ public class LoginPresenter implements LoginContract.Presenter {
                     Boolean isEmailNull = email == null;
 
                     if (!isEmailNull) {
-                        mView.showLogoutActivity();
+                        mView.showHomeActivity();
                     }
                 });
     }
