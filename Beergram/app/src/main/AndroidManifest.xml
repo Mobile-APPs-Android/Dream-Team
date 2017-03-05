@@ -30,17 +30,13 @@
         <activity android:name=".auth.register.RegisterActivity" />
         <activity android:name=".auth.logout.LogoutActivity" />
         <activity android:name=".camera.CameraActivity" />
-<<<<<<< HEAD
         <activity android:name=".auth.login.LoginActivity"/>
-=======
         <activity android:name=".newsfeed.NewsfeedActivity" />
-
->>>>>>> origin/master
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAumtVmmQWTNQCnwOf_QTKpgzcb4iBo2lE" />
 
-        <activity android:name=".contacts.ContactsActivity" />
+        <!--<activity android:name=".contacts.ContactsActivity" />-->
     </application>
 
 </manifest>
