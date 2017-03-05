@@ -1,6 +1,47 @@
 package com.example.dreamteam.beergram.tabs;
 
+        import android.content.Intent;
+        import android.os.Bundle;
+        import android.support.v7.app.AppCompatActivity;
+        import android.support.v7.widget.Toolbar;
+        import android.view.View;
+        import android.widget.Button;
+        import com.example.dreamteam.beergram.R;
 
+public class TabActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private Toolbar toolbar;
+    private Button btnSimpleTabs, btnIconTabs;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_tab);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        btnSimpleTabs = (Button) findViewById(R.id.btnSimpleTabs);
+        btnIconTabs = (Button) findViewById(R.id.btnIconTabs);;
+
+        btnSimpleTabs.setOnClickListener(this);
+        btnIconTabs.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btnSimpleTabs:
+                startActivity(new Intent(TabActivity.this, SimpleTabsActivity.class));
+                break;
+            case R.id.btnIconTabs:
+                startActivity(new Intent(TabActivity.this, IconTabsActivity.class));
+                break;
+        }
+    }
+}
+
+/*
 import android.app.ActionBar;
 
 
@@ -25,8 +66,8 @@ import com.example.dreamteam.beergram.R;
 
 public class TabActivity extends AppCompatActivity implements ActionBar.TabListener {
     public static TabActivity instance;
-    private BlankFragment1 fragmentOne;
-    private BlankFragment2 fragmentTwo;
+    private OneFragment fragmentOne;
+    private TwoFragment fragmentTwo;
     private TabLayout allTabs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +84,8 @@ public class TabActivity extends AppCompatActivity implements ActionBar.TabListe
         allTabs = (TabLayout) findViewById(R.id.tabs);
     }
     private void setupTabLayout() {
-        fragmentOne = new BlankFragment1();
-        fragmentTwo = new BlankFragment2();
+        fragmentOne = new OneFragment();
+        fragmentTwo = new TwoFragment();
         allTabs.addTab(allTabs.newTab().setText("ONE"),true);
         allTabs.addTab(allTabs.newTab().setText("TWO"));
     }
@@ -84,3 +125,4 @@ public class TabActivity extends AppCompatActivity implements ActionBar.TabListe
 
     }
 }
+*/
