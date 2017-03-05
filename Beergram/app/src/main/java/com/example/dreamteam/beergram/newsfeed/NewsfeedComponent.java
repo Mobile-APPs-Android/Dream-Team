@@ -3,8 +3,6 @@ package com.example.dreamteam.beergram.newsfeed;
 import com.example.dreamteam.beergram.utils.FragmentScoped;
 import com.example.dreamteam.beergram.data.RepositoryComponent;
 
-import javax.inject.Singleton;
-
 import dagger.Component;
 
 @FragmentScoped

@@ -1,9 +1,13 @@
 package com.example.dreamteam.beergram.data;
 
+import android.util.Log;
+
 import com.example.dreamteam.beergram.data.authprovider.IAuthProvider;
 import com.example.dreamteam.beergram.data.local.ILocalRepository;
 import com.example.dreamteam.beergram.data.remote.IRemoteRepository;
 import com.example.dreamteam.beergram.data.storage.IStorageRepository;
+import com.example.dreamteam.beergram.models.Position;
+import com.example.dreamteam.beergram.models.Post;
 import com.example.dreamteam.beergram.models.User;
 import com.example.dreamteam.beergram.utils.IRandomStringProvider;
 
@@ -13,6 +17,7 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import io.reactivex.Observable;
+import io.reactivex.functions.Consumer;
 
 @Singleton
 public class Repository implements IRepository {
@@ -42,6 +47,7 @@ public class Repository implements IRepository {
         final String[] username = {null};
         return mAuthProvider.createUser(email, password, firstName, lastName, address)
                 .switchMap(user -> {
+                    Log.d("asdf", "PENCDHO");
                     username[0] = user.getmEmail();
                     return mLocalRepository.addCurrentUser(user);
                 })
@@ -93,5 +99,17 @@ public class Repository implements IRepository {
         return this.storageRef.saveImage(image);
     }
 
+    @Override
+    public Observable<Post> postLocationToFriends() {
+//        String id = mRandomStringProvider.nextString();
+//        mRemoteRepository.addPost(position, id);
+        Post post = new Post(0, 0, "");
+        return mLocalRepository.getCurrentPosition()
+            .switchMap(position -> {
+                post.setLatitude(position.getmLatitude());
+                post.setLongitude(position.getmLongtitude());
 
+                return mRemoteRepository.addPost(post);
+            });
+    }
 }

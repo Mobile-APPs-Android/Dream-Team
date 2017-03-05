@@ -18,18 +18,20 @@ import dagger.Provides;
 @Module
 public class FirebaseRepositoryModule {
     private static final String USERS_DB_CHILD_STRING = "users";
+    private static final String POSTS_DB_CHILD_STRING = "posts";
 
     private final StorageReference storageRef;
     private final FirebaseAuth mAuth;
     private final FirebaseAuth.AuthStateListener mAuthListener;
 
     private final DatabaseReference mUsersData;
+    private final DatabaseReference mPostsData;
 
     public FirebaseRepositoryModule() {
         storageRef = FirebaseStorage.getInstance().getReference();
 
         mUsersData = FirebaseDatabase.getInstance().getReference().child(USERS_DB_CHILD_STRING);
-
+        mPostsData = FirebaseDatabase.getInstance().getReference().child(POSTS_DB_CHILD_STRING);
         mAuth = FirebaseAuth.getInstance();
 
         mAuthListener = firebaseAuth -> {
@@ -62,5 +64,12 @@ public class FirebaseRepositoryModule {
     @Named("usersData")
     DatabaseReference provideUserDataReference() {
         return mUsersData;
+    }
+
+    @Singleton
+    @Provides
+    @Named("postsData")
+    DatabaseReference providePostDataReference() {
+        return mPostsData;
     }
 }

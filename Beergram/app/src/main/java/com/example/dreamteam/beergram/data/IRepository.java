@@ -1,5 +1,7 @@
 package com.example.dreamteam.beergram.data;
 
+import com.example.dreamteam.beergram.models.Position;
+import com.example.dreamteam.beergram.models.Post;
 import com.example.dreamteam.beergram.models.User;
 
 import java.io.File;
@@ -20,4 +22,6 @@ public interface IRepository {
     Observable<Boolean> getIsFirstTimeForUser();
 
     Observable<Boolean> savePicture(File image);
+
+    public Observable<Post> postLocationToFriends();
 }

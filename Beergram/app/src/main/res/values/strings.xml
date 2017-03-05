@@ -86,6 +86,7 @@
     <string name="logout_form_title_text">Are you sure you want to logout?</string>
     <string name="loading_logging_out_text">Logging out…</string>
     <string name="address_text">Address</string>
+    <string name="search_example_text">Search...</string>
     <string name="bad_email_text">Enter a valid email address</string>
     <string name="bad_first_name_text">Name must be at least 2 symbols</string>
     <string name="bad_last_name_text">Name must be at least 2 symbols</string>

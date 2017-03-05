@@ -1,21 +1,19 @@
 package com.example.dreamteam.beergram.newsfeed;
 
-import com.example.dreamteam.beergram.auth.login.LoginContract;
-
 import dagger.Module;
 import dagger.Provides;
 
 @Module
 public class NewsfeedModule {
 
-    private final LoginContract.View mView;
+    private final NewsfeedContract.View view;
 
-    public NewsfeedModule(LoginContract.View view){
-        mView = view;
+    public NewsfeedModule(NewsfeedContract.View view){
+        this.view = view;
     }
 
     @Provides
-    LoginContract.View provideNewsfeedView(){
-        return mView;
+    NewsfeedContract.View provideNewsfeedView(){
+        return this.view;
     }
 }
