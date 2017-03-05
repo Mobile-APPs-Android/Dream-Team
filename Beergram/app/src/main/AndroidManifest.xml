@@ -31,11 +31,14 @@
         <activity android:name=".auth.logout.LogoutActivity" />
         <activity android:name=".camera.CameraActivity" />
         <activity android:name=".newsfeed.NewsfeedActivity" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAumtVmmQWTNQCnwOf_QTKpgzcb4iBo2lE" />
 
-        <!--<activity android:name=".contacts.ContactsActivity" />-->
+        <!-- <activity android:name=".contacts.ContactsActivity" /> -->
+        <activity android:name=".search.SearchActivity" />
+        <activity android:name=".profile.ProfileActivity"></activity>
     </application>
 
 </manifest>
