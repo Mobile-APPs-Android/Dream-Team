@@ -45,7 +45,6 @@ public class LoginFragment extends Fragment implements LoginContract.View {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_login, container, false);
-
         mBtnLogin = (Button) mRootView.findViewById(R.id.btn_login);
 
         mEtEmail = (EditText) mRootView.findViewById(R.id.et_email);
@@ -58,7 +57,6 @@ public class LoginFragment extends Fragment implements LoginContract.View {
             String email = String.valueOf(mEtEmail.getText());
             String password = String.valueOf(mEtPassword.getText());
             mPresenter.loginUser(email, password);
-
         });
 
         mTvCreateAccount.setOnClickListener(v -> mPresenter.onCreateAccount());

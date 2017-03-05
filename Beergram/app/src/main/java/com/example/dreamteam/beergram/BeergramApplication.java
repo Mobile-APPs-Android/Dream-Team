@@ -12,6 +12,7 @@ public class BeergramApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
         mComponent = DaggerRepositoryComponent
                 .builder()
                 .beergramApplicationModule(new BeergramApplicationModule(this))

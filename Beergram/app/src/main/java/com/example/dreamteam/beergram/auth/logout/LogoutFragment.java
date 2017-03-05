@@ -2,6 +2,7 @@ package com.example.dreamteam.beergram.auth.logout;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dreamteam.beergram.R;
+import com.example.dreamteam.beergram.auth.login.LoginActivity;
+import com.example.dreamteam.beergram.auth.login.LoginFragment;
 import com.example.dreamteam.beergram.utils.BeergramProgressDialog;
 
 /**
@@ -93,7 +96,10 @@ public class LogoutFragment extends Fragment implements LogoutContract.View {
 
     @Override
     public void showLoginActivity() {
+        Intent intet = new Intent(mContext, LoginActivity.class);
+
         getActivity().finish();
+        startActivity(intet);
     }
 
     @Override

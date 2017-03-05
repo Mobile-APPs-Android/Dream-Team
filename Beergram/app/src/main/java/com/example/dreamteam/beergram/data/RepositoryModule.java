@@ -39,4 +39,7 @@ public abstract class RepositoryModule {
 
     @Binds
     abstract IStorageRepository provideStorageRepository(StorageRepository storageRepository);
+
+    @Binds
+    abstract ILocationProvider provideLocationProcider(LocationProvider locationProvider);
 }

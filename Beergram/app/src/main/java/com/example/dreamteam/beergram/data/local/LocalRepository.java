@@ -3,7 +3,9 @@ package com.example.dreamteam.beergram.data.local;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.dreamteam.beergram.data.ILocationProvider;
 import com.example.dreamteam.beergram.data.local.LocalDb.ILocalDbRepository;
+import com.example.dreamteam.beergram.models.Position;
 import com.example.dreamteam.beergram.models.User;
 
 import javax.inject.Inject;
@@ -31,11 +33,13 @@ public class LocalRepository implements ILocalRepository {
     private static final String CURRENT_USER_EMAIL = "user_email";
 
     private final ILocalDbRepository mLocalDbRepository;
+    private final ILocationProvider locationProvider;
 
     @Inject
-    public LocalRepository(Context context, ILocalDbRepository localDbRepository) {
+    public LocalRepository(Context context, ILocalDbRepository localDbRepository, ILocationProvider locationProvider) {
         mContext = context;
         mLocalDbRepository = localDbRepository;
+        this.locationProvider = locationProvider;
 
         mPreferences = mContext.getSharedPreferences("babuu_preferences", Context.MODE_PRIVATE);
         mPrefEditor = mPreferences.edit();
@@ -107,6 +111,32 @@ public class LocalRepository implements ILocalRepository {
             } catch (Throwable thr) {
                 e.onNext(false);
             }
+        });
+    }
+
+    @Override
+    public Observable<String> getAddress(Position position) {
+        return Observable.create(e -> e.onNext(this.locationProvider.getAddress(position)));
+    }
+
+    @Override
+    public Observable<Position> getCurrentPosition() {
+        return Observable.create(e -> e.onNext(this.locationProvider.getCurrentPosition()));
+    }
+
+    @Override
+    public Observable<Boolean> connectLocationListener() {
+        return Observable.create(e -> {
+            this.locationProvider.connectLocationListener();
+            e.onNext(true);
+        });
+    }
+
+    @Override
+    public Observable<Boolean> disconnectLocationListener() {
+        return Observable.create(e -> {
+            this.locationProvider.disconnectLocationListener();
+            e.onNext(true);
         });
     }
 }
