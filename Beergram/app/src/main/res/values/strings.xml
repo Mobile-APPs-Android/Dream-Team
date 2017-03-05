@@ -3,8 +3,6 @@
     <?xml version="1.0"?>
     <string name="app_name">Beergram</string>
 
-    <!--Drawer-->
-
     <string name="HomeDrawerItemName">Home</string>
     <string name="ProductsDrawerItemName">Products</string>
     <string name="FavouriteDrawerItemName">Favourites</string>
@@ -14,56 +12,11 @@
     <string name="AboutUsDrawerItemName">About us</string>
     <string name="LoginLogoutDrawerName">LogIn</string>
 
-    <!--App-->
-
-    <string name="app_title">Babuu</string>
-    <string name="baba_says">Baba:</string>
-    <string name="baba_speech">What do you want me to knit for you?</string>
-    <string name="sweater_text">Sweater</string>
-    <string name="socks_text">Socks</string>
-    <string name="scarf_text">Scarf</string>
-
-    <!--Sweater Customization-->
-
-
-    <string name="product_customization_title">Create your custom design</string>
-    <string name="product_customization_subtitle">Select the part you want to customize</string>
-    <string name="product_customization_size_btn">Size</string>
-    <string name="baby_size_0_6">0-6m</string>
-    <string name="baby_size_6_12">6m-12m</string>
-    <string name="baby_size_12_18">12m-18m</string>
-    <string name="baby_size_18_2">18m-2y</string>
-    <string name="adult_size_xs">XS</string>
-    <string name="adult_size_s">S</string>
-    <string name="adult_size_m">M</string>
-    <string name="adult_size_l">L</string>
-    <string name="adult_size_xl">XL</string>
-    <string name="adult_size_xxl">XXL</string>
-    <string name="selected_size_text">Selected size:</string>
-    <string name="baby_size_0_6_text">Baby 0-6m</string>
-    <string name="baby_size_6_12_text">Baby 6m-12m</string>
-    <string name="baby_size_12_18_text">Baby 12m-18m</string>
-    <string name="baby_size_18_2_text">Baby 18m-2y</string>
-    <string name="adult_m_size_xs_text">Male XS</string>
-    <string name="adult_m_size_s_text">Male S</string>
-    <string name="adult_m_size_m_text">Male M</string>
-    <string name="adult_m_size_l_text">Male L</string>
-    <string name="adult_m_size_xl_text">Male XL</string>
-    <string name="adult_m_size_xxl_text">Male XXL</string>
-    <string name="adult_f_size_xs_text">Female XS</string>
-    <string name="adult_f_size_s_text">Female S</string>
-    <string name="adult_f_size_m_text">Female M</string>
-    <string name="adult_f_size_l_text">Female L</string>
-    <string name="adult_f_size_xl_text">Female XL</string>
-    <string name="adult_f_size_xxl_text">Female XXL</string>
     <string name="email_example_text">Email</string>
     <string name="password_example_text">Password</string>
     <string name="login_btn_text">Login</string>
     <string name="no_account_text">No account yet? Create one</string>
     <string name="forgot_password_text">Forgot your password?</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="first_name_text">First name</string>
     <string name="last_name_text">Last name</string>
@@ -99,9 +52,6 @@
 
     <!--translated to here-->
 
-    <string name="onboarding_first_Screen">Welcome to Babuu\n\nOur cool grannies will make for you the custom sweater, socks or scarf that YOU design</string>
-    <string name="onboarding_second_Screen">Create your very own design</string>
-    <string name="onboarding_third_Screen">Get it delivered to your doo</string>
     <string name="choose_picture_resource_text">Choose resource</string>
     <string name="learn_as_you_go">Learn more</string>
     <string name="skip_onboarding_btn_text">Skip</string>
@@ -131,7 +81,6 @@
     <string-array name="profile_picture_resource_picker">
         <item>Gallery</item>
         <item>Capture now</item>
-    
     </string-array>
 
     <string name="title_activity_logged">LoggedActivity</string>
