@@ -19,12 +19,15 @@ import dagger.Provides;
 public class FirebaseRepositoryModule {
     private static final String USERS_DB_CHILD_STRING = "users";
 
+    private final StorageReference storageRef;
     private final FirebaseAuth mAuth;
     private final FirebaseAuth.AuthStateListener mAuthListener;
 
     private final DatabaseReference mUsersData;
 
     public FirebaseRepositoryModule() {
+        storageRef = FirebaseStorage.getInstance().getReference();
+
         mUsersData = FirebaseDatabase.getInstance().getReference().child(USERS_DB_CHILD_STRING);
 
         mAuth = FirebaseAuth.getInstance();
@@ -38,6 +41,9 @@ public class FirebaseRepositoryModule {
             }
         };
     }
+    @Singleton
+    @Provides
+    StorageReference provideStorageReference() { return this.storageRef; }
 
     @Singleton
     @Provides

@@ -2,6 +2,8 @@ package com.example.dreamteam.beergram.data;
 
 import com.example.dreamteam.beergram.models.User;
 
+import java.io.File;
+
 import io.reactivex.Observable;
 
 public interface IRepository {
@@ -16,4 +18,6 @@ public interface IRepository {
     Observable<User> updateAccountInfo(String firstName, String lastName, String email, String address, String credentialsEmail, String credentialsPassword);
 
     Observable<Boolean> getIsFirstTimeForUser();
+
+    Observable<Boolean> savePicture(File image);
 }

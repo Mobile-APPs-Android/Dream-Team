@@ -8,6 +8,8 @@ import com.example.dreamteam.beergram.data.local.LocalDb.SqlLiteDb;
 import com.example.dreamteam.beergram.data.local.LocalRepository;
 import com.example.dreamteam.beergram.data.remote.FirebaseRemoteRepository;
 import com.example.dreamteam.beergram.data.remote.IRemoteRepository;
+import com.example.dreamteam.beergram.data.storage.IStorageRepository;
+import com.example.dreamteam.beergram.data.storage.StorageRepository;
 import com.example.dreamteam.beergram.utils.IRandomStringProvider;
 import com.example.dreamteam.beergram.utils.RandomStringProvider;
 
@@ -34,4 +36,7 @@ public abstract class RepositoryModule {
 
     @Binds
     abstract IRandomStringProvider provideRandomStringProvider(RandomStringProvider randomStringProvider);
+
+    @Binds
+    abstract IStorageRepository provideStorageRepository(StorageRepository storageRepository);
 }

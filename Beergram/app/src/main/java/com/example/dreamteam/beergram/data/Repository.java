@@ -3,8 +3,11 @@ package com.example.dreamteam.beergram.data;
 import com.example.dreamteam.beergram.data.authprovider.IAuthProvider;
 import com.example.dreamteam.beergram.data.local.ILocalRepository;
 import com.example.dreamteam.beergram.data.remote.IRemoteRepository;
+import com.example.dreamteam.beergram.data.storage.IStorageRepository;
 import com.example.dreamteam.beergram.models.User;
 import com.example.dreamteam.beergram.utils.IRandomStringProvider;
+
+import java.io.File;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -14,6 +17,7 @@ import io.reactivex.Observable;
 @Singleton
 public class Repository implements IRepository {
 
+    private final IStorageRepository storageRef;
     private final IAuthProvider mAuthProvider;
     private final IRemoteRepository mRemoteRepository;
     private final ILocalRepository mLocalRepository;
@@ -21,10 +25,12 @@ public class Repository implements IRepository {
 
     @Inject
     public Repository(
+            IStorageRepository storageRef,
             IAuthProvider authProvider,
             IRemoteRepository remoteRepository,
             ILocalRepository localRepository,
             IRandomStringProvider randomStringProvider) {
+        this.storageRef = storageRef;
         mAuthProvider = authProvider;
         mRemoteRepository = remoteRepository;
         mLocalRepository = localRepository;
@@ -81,5 +87,11 @@ public class Repository implements IRepository {
         return mLocalRepository.getCurrentUser()
                 .switchMap(u -> mLocalRepository.getIsFirstTimeForUser(u.getmEmail()));
     }
+
+    @Override
+    public Observable<Boolean> savePicture(File image) {
+        return this.storageRef.saveImage(image);
+    }
+
 
 }

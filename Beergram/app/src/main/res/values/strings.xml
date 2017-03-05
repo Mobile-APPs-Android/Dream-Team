@@ -69,6 +69,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="first_name_text">First name</string>
     <string name="last_name_text">Last name</string>
+    <string name="picture_error_save">Picture not saved</string>
+    <string name="picture_saved_successfully">Image saved successfully</string>
     <string name="address_optional_text">Address(Optional)</string>
     <string name="register_btn_text">Register</string>
     <string name="register_form_title_text">Register form</string>
