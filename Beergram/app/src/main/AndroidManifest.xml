@@ -30,12 +30,12 @@
         <activity android:name=".auth.logout.LogoutActivity" />
         <activity android:name=".camera.CameraActivity" />
         <activity android:name=".newsfeed.NewsfeedActivity" />
-        <activity android:name=".tabs.TabActivity" />
         <activity android:name=".search.SearchActivity" />
         <activity android:name=".profile.ProfileActivity" />
         <!--<activity android:name=".contacts.ContactsActivity" />
         <activity android:name=".tabs.SimpleTabsActivity" />
-        <activity android:name=".tabs.IconTabsActivity"/>-->
+        <activity android:name=".tabs.IconTabsActivity"/>
+        <activity android:name=".tabs.TabActivity" />-->
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
