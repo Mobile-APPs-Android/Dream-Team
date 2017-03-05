@@ -40,7 +40,7 @@ public class BlankFragment2 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment BlankFragment2.
+     * @return A new instance of fragment TwoFragment.
      */
     // TODO: Rename and change types and number of parameters
     public static BlankFragment2 newInstance(String param1, String param2) {
@@ -65,7 +65,7 @@ public class BlankFragment2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank_fragment2, container, false);
+        return inflater.inflate(R.layout.fragment_two, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
