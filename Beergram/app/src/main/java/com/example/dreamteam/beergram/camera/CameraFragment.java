@@ -2,8 +2,6 @@ package com.example.dreamteam.beergram.camera;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
