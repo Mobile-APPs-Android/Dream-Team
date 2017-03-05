@@ -1,6 +1,5 @@
 package com.example.dreamteam.beergram.camera;
 
-import com.example.dreamteam.beergram.auth.login.LoginContract;
 import com.example.dreamteam.beergram.data.IRepository;
 
 import java.io.File;
@@ -11,10 +10,10 @@ import pl.aprilapps.easyphotopicker.EasyImage;
 
 public class CameraPresenter implements CameraContract.Presenter{
     private IRepository repository;
-    private LoginContract.View view;
+    private CameraContract.View view;
 
     @Inject
-    public void CameraPresenter(LoginContract.View view, IRepository repository) {
+    public void CameraPresenter(CameraContract.View view, IRepository repository) {
         this.view = view;
         this.repository = repository;
     }
@@ -25,7 +24,17 @@ public class CameraPresenter implements CameraContract.Presenter{
     }
 
     @Override
-    public void saveImage(File imageFile, EasyImage.ImageSource source) {
-
+    public void saveImage(File imageFile) {
+        this.view.showNewsFeedActivity();
+//        this.repository.savePicture(imageFile)
+//            .subscribe((result) -> {
+//                if (result) {
+//                    this.view.notifyPictureSavedSuccessful();
+//                    this.view.showNewsFeedActivity();
+//                }
+//                else {
+//                    this.view.notifyBadPicture();
+//                }
+//            });
     }
 }

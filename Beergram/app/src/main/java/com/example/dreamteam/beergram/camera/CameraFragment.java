@@ -7,20 +7,22 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.dreamteam.beergram.R;
-import com.example.dreamteam.beergram.auth.logout.LogoutActivity;
+import com.example.dreamteam.beergram.newsfeed.NewsfeedActivity;
+import com.example.dreamteam.beergram.newsfeed.NewsfeedModule;
+import com.example.dreamteam.beergram.newsfeed.NewsfeedModule_ProvideNewsfeedViewFactory;
 
 import java.io.File;
 
 import pl.aprilapps.easyphotopicker.EasyImage;
 
-
 public class CameraFragment extends Fragment implements CameraContract.View, EasyImage.Callbacks {
     private View rootView;
     private CameraContract.Presenter presenter;
 
-    private Context mContext;
+    private Context context;
 
 
     public CameraFragment() {
@@ -45,8 +47,15 @@ public class CameraFragment extends Fragment implements CameraContract.View, Eas
     }
 
     @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        this.context = context;
+    }
+
+    @Override
     public void showNewsFeedActivity() {
-        Intent intent = new Intent(mContext, LogoutActivity.class); // TODO change activity with NewsFeedActivity
+        Intent intent = new Intent(this.context, NewsfeedActivity.class); // TODO change activity with NewsFeedActivity
 
         this.getActivity().finish();
         startActivity(intent);
@@ -59,8 +68,7 @@ public class CameraFragment extends Fragment implements CameraContract.View, Eas
 
     @Override
     public void onImagePicked(File imageFile, EasyImage.ImageSource source, int type) {
-        this.presenter.saveImage(imageFile, source);
-        this.showNewsFeedActivity();
+        this.presenter.saveImage(imageFile);
     }
 
     @Override
@@ -71,4 +79,15 @@ public class CameraFragment extends Fragment implements CameraContract.View, Eas
         }
         this.showNewsFeedActivity();
     }
+
+    public void notifyPictureSavedSuccessful() {
+        Toast.makeText(this.context, getString(R.string.picture_saved_successfully), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void notifyBadPicture() {
+        Toast.makeText(this.context, getString(R.string.picture_error_save), Toast.LENGTH_SHORT).show();
+
+    }
+
 }

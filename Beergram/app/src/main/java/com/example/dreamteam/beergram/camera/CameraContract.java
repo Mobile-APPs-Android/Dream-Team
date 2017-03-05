@@ -17,13 +17,13 @@ public interface CameraContract {
 //
 //        void showResetPasswordActivity();
 //
-            void showNewsFeedActivity();
+        void showNewsFeedActivity();
 //
 //        void showLogoutActivity();
 //
-//        void notifyLoggedInUser(String username);
-//
-//        void notoifyBadEmailOrPassword();
+        void notifyPictureSavedSuccessful();
+
+        void notifyBadPicture();
 //
 //        void showDialogForLoggingUser();
 //
@@ -33,6 +33,6 @@ public interface CameraContract {
     }
 
     interface Presenter extends BasePresenter {
-        void saveImage(File imageFile, EasyImage.ImageSource source);
+        void saveImage(File imageFile);
     }
 }

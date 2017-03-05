@@ -3,6 +3,7 @@ package com.example.dreamteam.beergram.data;
 import android.app.Application;
 
 import com.example.dreamteam.beergram.BeergramApplicationModule;
+import com.example.dreamteam.beergram.data.storage.StorageRepository;
 
 import javax.inject.Singleton;
 

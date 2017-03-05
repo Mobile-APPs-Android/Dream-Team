@@ -42,8 +42,6 @@ public class FirebaseAuthProvider implements IAuthProvider {
         return Observable.create(new ObservableOnSubscribe<User>() {
             @Override
             public void subscribe(ObservableEmitter<User> e) throws Exception {
-                Log.d("asdf", email);
-                Log.d("asdf", password);
                 mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
