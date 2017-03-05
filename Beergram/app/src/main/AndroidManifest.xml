@@ -19,14 +19,11 @@
         android:icon="@mipmap/ic_beer"
         android:label="@string/app_name"
         android:supportsRtl="true"
-<<<<<<< HEAD
         android:theme="@style/AppTheme">
-=======
-        android:theme="@style/AppBaseTheme">
->>>>>>> origin/master
         <activity android:name=".auth.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -35,14 +32,10 @@
         <activity android:name=".camera.CameraActivity" />
         <activity android:name=".newsfeed.NewsfeedActivity" />
         <activity android:name=".tabs.TabActivity" />
-<<<<<<< HEAD
-=======
+        <!-- <activity android:name=".contacts.ContactsActivity" /> -->
         <activity android:name=".search.SearchActivity" />
         <activity android:name=".profile.ProfileActivity" />
-        <!--<activity android:name=".contacts.ContactsActivity" />
-        <activity android:name=".tabs.SimpleTabsActivity" />
-        <activity android:name=".tabs.IconTabsActivity"/>-->
->>>>>>> origin/master
+        <activity android:name=".tabs.IconTabsActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
