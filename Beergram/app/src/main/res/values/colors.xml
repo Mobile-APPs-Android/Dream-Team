@@ -45,6 +45,8 @@
 
     <!--COLORS-->
     <color name="btn_bg">#26A69A</color>
+    <color name="btn_bg2">#3CE6D6</color>
+
     <color name="bg_activities">#212121</color>
 
 

@@ -5,43 +5,68 @@
     tools:context="com.example.dreamteam.beergram.newsfeed.NewsFeedFragment">
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:id="@+id/et_search"
-            android:layout_width="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/search_example_text"
-            android:textColorHint="@color/white"
-            android:textColor="@color/white"
-            android:inputType="textEmailAddress"
-            />
-
-        <Button
-            android:id="@+id/btn_search"
-            android:shadowColor="@color/red"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Search"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="You are in a bar and looking for friends to join?"/>
-        <Button
-            android:id="@+id/btn_post_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Post your location to your friends"/>
-        <ListView
-            android:id="@+id/lv_posts"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </ListView>
-        <TextView
-            android:id="@+id/tv_test"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            >
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/search_example_text"
+                android:textColorHint="@color/iron"
+                android:textColor="@color/white"
+                android:inputType="textEmailAddress"
+                android:layout_weight="1"
+                android:layout_marginTop="20dp"
+                />
+            <!--android:icon="@mipmap/ic_search"-->
+            <Button
+                android:background="@color/btn_bg"
+                android:id="@+id/btn_search"
+                android:shadowColor="@color/red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="SEARCH"
+                android:layout_marginTop="10dp"
+                />
+        </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/iron"
+                android:text="@string/share_location_slogan"/>
+            <Button
+                android:id="@+id/btn_post_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/btn_bg"
+                android:shadowColor="@color/black"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                android:layout_marginTop="15dp"
+                android:textSize="20dp"
+                android:text="@string/location_btn_txt"/>
+    </LinearLayout>
+            <ListView
+                android:id="@+id/lv_posts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </ListView>
+            <TextView
+                android:id="@+id/tv_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
     </LinearLayout>
 </FrameLayout>
