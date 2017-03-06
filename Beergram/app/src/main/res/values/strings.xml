@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Beergram</string>
+    <string name="app_name">BEERGRAM</string>
 
     <string name="CameraDrawerItemName">Take Picture</string>
     <string name="NewsFeedDrawerItemName">Activity feed</string>
