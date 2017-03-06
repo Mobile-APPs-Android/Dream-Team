@@ -11,14 +11,14 @@
     tools:context="com.example.dreamteam.beergram.camera.CameraActivity">
 
     <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:name="com.example.dreamteam.beergram.drawer.DrawerFragment" />
+
+    <fragment
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:name="com.example.dreamteam.beergram.camera.CameraFragment"/>
-
-    <!--<ImageView
-        android:id="@+id/ivCamera"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" /> -->
 
 </RelativeLayout>

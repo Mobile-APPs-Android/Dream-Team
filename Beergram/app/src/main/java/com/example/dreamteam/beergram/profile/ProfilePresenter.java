@@ -33,10 +33,10 @@ public class ProfilePresenter implements ProfileContract.Presenter {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(user -> {
-                    tvEmail.setText(user.getmEmail());
-                    tvFirstName.setText(user.getmFirstName());
-                    tvLastName.setText(user.getmLastName());
-                    tvAdress.setText(user.getmAddress());
+                    tvEmail.setText(user.getEmail());
+                    tvFirstName.setText(user.getFirstName());
+                    tvLastName.setText(user.getLastName());
+                    tvAdress.setText(user.getAddress());
                 });
     }
 }

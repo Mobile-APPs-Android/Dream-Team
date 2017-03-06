@@ -5,76 +5,63 @@ import java.util.Map;
 
 public class User {
 
-    private String mUserId;
+    private String userId;
 
-    private String mEmail;
+    private String email;
 
-    private String mFirstName;
+    private String firstName;
 
-    private String mLastName;
+    private String lastName;
 
-    private String mAddress;
-
-    private Map<String, Boolean> mOrders;
-
+    private String address;
 
     public User() {
-        this.setmOrders(new HashMap<>());
     }
 
     public User(String email, String firstName, String lastName, String address) {
-        this();
-        this.setmEmail(email);
-        this.setmFirstName(firstName);
-        this.setmLastName(lastName);
-        this.setmAddress(address);
+        this.setEmail(email);
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
+        this.setAddress(address);
     }
 
-    public String getmUserId() {
-        return mUserId;
+    public String getUserId() {
+        return this.userId;
     }
 
-    public void setmUserId(String mUserId) {
-        this.mUserId = mUserId;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public String getmEmail() {
-        return mEmail;
+    public String getEmail() {
+        return this.email;
     }
 
-    public void setmEmail(String mEmail) {
-        this.mEmail = mEmail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getmFirstName() {
-        return mFirstName;
+    public String getFirstName() {
+        return this.firstName;
     }
 
-    public void setmFirstName(String mFirstName) {
-        this.mFirstName = mFirstName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getmLastName() {
-        return mLastName;
+    public String getLastName() {
+        return this.lastName;
     }
 
-    public void setmLastName(String mLastName) {
-        this.mLastName = mLastName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getmAddress() {
-        return mAddress;
+    public String getAddress() {
+        return this.address;
     }
 
-    public void setmAddress(String mAddress) {
-        this.mAddress = mAddress;
-    }
-
-    public Map<String, Boolean> getmOrders() {
-        return mOrders;
-    }
-
-    public void setmOrders(Map<String, Boolean> mOrders) {
-        this.mOrders = mOrders;
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

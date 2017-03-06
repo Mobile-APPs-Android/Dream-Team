@@ -11,18 +11,18 @@ import io.reactivex.schedulers.Schedulers;
 
 public class RegisterPresenter implements RegisterContract.Presenter {
 
-    private final RegisterContract.View mView;
-    private final IRepository mRepository;
+    private final RegisterContract.View view;
+    private final IRepository repository;
 
     @Inject
     public RegisterPresenter(RegisterContract.View view, IRepository repository) {
-        mView = view;
-        mRepository = repository;
+        this.view = view;
+        this.repository = repository;
     }
 
     @Inject
     public void setupListener() {
-        mView.setPresenter(this);
+        this.view.setPresenter(this);
     }
 
     @Override
@@ -35,21 +35,21 @@ public class RegisterPresenter implements RegisterContract.Presenter {
         boolean isRegUserInfoValid = this.validateUserRegInfo(email, password, confirmPassword, firstName, lastName);
 
         if (isRegUserInfoValid) {
-            mView.showDialogForCreatingUser();
-            mRepository.createUser(email, password, firstName, lastName, address)
+            this.view.showDialogForCreatingUser();
+            this.repository.createUser(email, password, firstName, lastName, address)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(username -> {
-                        mView.dismissDialog();
-                        mView.notifyCreatedUser(username);
-                        mView.showHomeActivity();
+                        this.view.dismissDialog();
+                        this.view.notifyCreatedUser(username);
+                        this.view.showHomeActivity();
                     });
         }
     }
 
     @Override
     public void onHasAccount() {
-        mView.showLoginActivity();
+        this.view.showLoginActivity();
     }
 
     private Boolean validateUserRegInfo(
@@ -62,25 +62,25 @@ public class RegisterPresenter implements RegisterContract.Presenter {
         Boolean isValid = true;
 
         if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            mView.showBadEmailError();
+            this.view.showBadEmailError();
             isValid = false;
         }
 
         if (!password.equals(confirmPassword)) {
-            mView.showBadConfirmPasswordError();
+            this.view.showBadConfirmPasswordError();
             isValid = false;
         } else if (password.isEmpty() || password.length() < 6) {
-            mView.showBadPasswordError();
+            this.view.showBadPasswordError();
             isValid = false;
         }
 
         if (firstName.isEmpty() || firstName.length() < 2) {
-            mView.showBadFirstNameError();
+            this.view.showBadFirstNameError();
             isValid = false;
         }
 
         if (lastName.isEmpty() || lastName.length() < 2) {
-            mView.showBadLastNameError();
+            this.view.showBadLastNameError();
             isValid = false;
         }
 

@@ -3,9 +3,9 @@ package com.example.dreamteam.beergram.data;
 import com.example.dreamteam.beergram.data.authprovider.FirebaseAuthProvider;
 import com.example.dreamteam.beergram.data.authprovider.IAuthProvider;
 import com.example.dreamteam.beergram.data.local.ILocalRepository;
-import com.example.dreamteam.beergram.data.local.LocalDb.ILocalDbRepository;
-import com.example.dreamteam.beergram.data.local.LocalDb.SqlLiteDb;
+import com.example.dreamteam.beergram.data.local.ILocationProvider;
 import com.example.dreamteam.beergram.data.local.LocalRepository;
+import com.example.dreamteam.beergram.data.local.LocationProvider;
 import com.example.dreamteam.beergram.data.remote.FirebaseRemoteRepository;
 import com.example.dreamteam.beergram.data.remote.IRemoteRepository;
 import com.example.dreamteam.beergram.data.storage.IStorageRepository;
@@ -30,9 +30,6 @@ public abstract class RepositoryModule {
 
     @Binds
     abstract ILocalRepository provideLocalRepository(LocalRepository localRepository);
-
-    @Binds
-    abstract ILocalDbRepository provideLocalDbRepository(SqlLiteDb localDbRepository);
 
     @Binds
     abstract IRandomStringProvider provideRandomStringProvider(RandomStringProvider randomStringProvider);

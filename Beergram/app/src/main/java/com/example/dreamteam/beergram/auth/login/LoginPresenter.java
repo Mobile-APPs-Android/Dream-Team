@@ -9,33 +9,33 @@ import io.reactivex.schedulers.Schedulers;
 
 public class LoginPresenter implements LoginContract.Presenter {
 
-    private final IRepository mRepository;
-    private LoginContract.View mView;
+    private final IRepository repository;
+    private LoginContract.View view;
 
     @Inject
     public LoginPresenter(LoginContract.View view, IRepository repository) {
-        mView = view;
-        mRepository = repository;
+        this.view = view;
+        this.repository = repository;
     }
 
     @Inject
     public void setupListener() {
-        mView.setPresenter(this);
+        this.view.setPresenter(this);
     }
 
     @Override
     public void start() {
-        mView.showDialogForLoading();
-        mRepository.getCurrentUser()
+        this.view.showDialogForLoading();
+        this.repository.getCurrentUser()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(user -> {
-                    mView.dismissDialog();
-                    String email = user.getmEmail();
+                    this.view.dismissDialog();
+                    String email = user.getEmail();
                     Boolean isEmailNull = email == null;
 
                     if (!isEmailNull) {
-                        mView.showLogoutActivity();
+                        this.view.showLogoutActivity();
                     }
                 });
     }
@@ -43,34 +43,34 @@ public class LoginPresenter implements LoginContract.Presenter {
     @Override
     public void loginUser(String email, String password) {
         if(email.isEmpty() || email == null || password.isEmpty() || password == null) {
-            mView.notoifyBadEmailOrPassword();
+            this.view.notoifyBadEmailOrPassword();
             return;
         }
 
-        mView.showDialogForLoggingUser();
-        mRepository.loginUser(email, password)
+        this.view.showDialogForLoggingUser();
+        this.repository.loginUser(email, password)
                 .observeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(username -> {
-                    mView.dismissDialog();
+                    this.view.dismissDialog();
 
                     if (username.isEmpty()) {
-                        mView.notoifyBadEmailOrPassword();
+                        this.view.notoifyBadEmailOrPassword();
                     } else {
-                        mView.notifyLoggedInUser(username);
-                        mView.showHomeActivity();
+                        this.view.notifyLoggedInUser(username);
+                        this.view.showHomeActivity();
                     }
                 });
     }
 
     @Override
     public void onResetPassword() {
-        mView.showResetPasswordActivity();
+        this.view.showResetPasswordActivity();
     }
 
     @Override
     public void onCreateAccount() {
-        mView.showRegisterActivity();
+        this.view.showRegisterActivity();
     }
 
 }

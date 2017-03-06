@@ -7,19 +7,19 @@ import com.example.dreamteam.beergram.data.RepositoryComponent;
 
 public class BeergramApplication extends Application {
 
-    RepositoryComponent mComponent;
+    RepositoryComponent component;
 
     @Override
     public void onCreate() {
         super.onCreate();
 
-        mComponent = DaggerRepositoryComponent
+        this.component = DaggerRepositoryComponent
                 .builder()
                 .beergramApplicationModule(new BeergramApplicationModule(this))
                 .build();
     }
 
     public RepositoryComponent getRepositoryComponent() {
-        return mComponent;
+        return this.component;
     }
 }

@@ -1,6 +1,5 @@
 package com.example.dreamteam.beergram.data;
 
-import com.example.dreamteam.beergram.models.Position;
 import com.example.dreamteam.beergram.models.Post;
 import com.example.dreamteam.beergram.models.User;
 
@@ -19,7 +18,7 @@ public interface IRepository {
 
     Observable<User> updateAccountInfo(String firstName, String lastName, String email, String address, String credentialsEmail, String credentialsPassword);
 
-    Observable<Boolean> getIsFirstTimeForUser();
+    public Observable<User[]> getAllUsers();
 
     Observable<Boolean> savePicture(File image);
 

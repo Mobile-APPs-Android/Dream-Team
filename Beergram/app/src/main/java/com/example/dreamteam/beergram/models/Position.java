@@ -4,33 +4,33 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Position implements Parcelable {
-    private double mLongtitude;
-    private double mLatitude;
+    private double longtitude;
+    private double latitude;
 
     public Position(double longtitude, double latitude) {
-        setmLongtitude(longtitude);
-        setmLatitude(latitude);
+        this.setmLongtitude(longtitude);
+        this.setmLatitude(latitude);
     }
 
     public double getmLongtitude() {
-        return mLongtitude;
+        return this.longtitude;
     }
 
     public void setmLongtitude(double mLongtitude) {
-        this.mLongtitude = mLongtitude;
+        this.longtitude = mLongtitude;
     }
 
     public double getmLatitude() {
-        return mLatitude;
+        return this.latitude;
     }
 
     public void setmLatitude(double mLatitude) {
-        this.mLatitude = mLatitude;
+        this.latitude = mLatitude;
     }
 
     protected Position(Parcel in) {
-        mLongtitude = in.readDouble();
-        mLatitude = in.readDouble();
+        this.longtitude = in.readDouble();
+        this.latitude = in.readDouble();
     }
 
     @Override
@@ -40,11 +40,10 @@ public class Position implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeDouble(mLongtitude);
-        dest.writeDouble(mLatitude);
+        dest.writeDouble(this.longtitude);
+        dest.writeDouble(this.latitude);
     }
 
-    @SuppressWarnings("unused")
     public static final Parcelable.Creator<Position> CREATOR = new Parcelable.Creator<Position>() {
         @Override
         public Position createFromParcel(Parcel in) {

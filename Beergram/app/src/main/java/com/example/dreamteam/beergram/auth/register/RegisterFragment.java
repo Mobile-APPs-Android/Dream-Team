@@ -15,24 +15,21 @@ import android.widget.Toast;
 
 import com.example.dreamteam.beergram.R;
 import com.example.dreamteam.beergram.camera.CameraActivity;
+import com.example.dreamteam.beergram.profile.ProfileActivity;
 import com.example.dreamteam.beergram.utils.BeergramProgressDialog;
 
 public class RegisterFragment extends Fragment implements RegisterContract.View {
 
-    public static final String USER_ID = "userId";
+    private View root;
+    private RegisterContract.Presenter presenter;
+    private BeergramProgressDialog dialog;
 
-    private View mRootView;
-
-    private RegisterContract.Presenter mPresenter;
-    private BeergramProgressDialog mDialog;
-
-    Button mBtnRegister;
-    EditText mEtEmail, mEtPassword, mEtConfirmPassword, mEtFirstName, mEtLastName, mEtAddress;
-    TextView mTvHasAccount;
-    private Context mContext;
+    Button btnRegister;
+    EditText etEmail, etPassword, etConfirmPassword, etFirstName, etLastName, etAddress;
+    TextView tvHasAccount;
+    private Context context;
 
     public RegisterFragment() {
-        // Required empty public constructor
     }
 
     public static RegisterFragment newInstance() {
@@ -43,63 +40,63 @@ public class RegisterFragment extends Fragment implements RegisterContract.View 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mRootView = inflater.inflate(R.layout.fragment_register, container, false);
+        this.root = inflater.inflate(R.layout.fragment_register, container, false);
 
-        mBtnRegister = (Button) mRootView.findViewById(R.id.btn_register);
+        this.btnRegister = (Button) this.root.findViewById(R.id.btn_register);
 
-        mEtEmail = (EditText) mRootView.findViewById(R.id.et_email);
-        mEtPassword = (EditText) mRootView.findViewById(R.id.et_password);
-        mEtConfirmPassword = (EditText) mRootView.findViewById(R.id.et_confirm_password);
-        mEtFirstName = (EditText) mRootView.findViewById(R.id.et_first_name);
-        mEtLastName = (EditText) mRootView.findViewById(R.id.et_last_name);
-        mEtAddress = (EditText) mRootView.findViewById(R.id.et_address);
+        this.etEmail = (EditText) this.root.findViewById(R.id.et_email);
+        this.etPassword = (EditText) this.root.findViewById(R.id.et_password);
+        this.etConfirmPassword = (EditText) this.root.findViewById(R.id.et_confirm_password);
+        this.etFirstName = (EditText) this.root.findViewById(R.id.et_first_name);
+        this.etLastName = (EditText) this.root.findViewById(R.id.et_last_name);
+        this.etAddress = (EditText) this.root.findViewById(R.id.et_address);
 
-        mTvHasAccount = (TextView) mRootView.findViewById(R.id.tv_already_has_account);
+        this.tvHasAccount = (TextView) this.root.findViewById(R.id.tv_already_has_account);
 
-        mBtnRegister.setOnClickListener(v -> {
-            String email = String.valueOf(mEtEmail.getText());
-            String password = String.valueOf(mEtPassword.getText());
-            String confirmPassword = String.valueOf(mEtConfirmPassword.getText());
-            String firstName = String.valueOf(mEtFirstName.getText());
-            String lastName = String.valueOf(mEtLastName.getText());
-            String address = String.valueOf(mEtAddress.getText());
+        this.btnRegister.setOnClickListener(v -> {
+            String email = String.valueOf(this.etEmail.getText());
+            String password = String.valueOf(this.etPassword.getText());
+            String confirmPassword = String.valueOf(this.etConfirmPassword.getText());
+            String firstName = String.valueOf(this.etFirstName.getText());
+            String lastName = String.valueOf(this.etLastName.getText());
+            String address = String.valueOf(this.etAddress.getText());
 
-            mPresenter.onRegister(email, password, confirmPassword, firstName, lastName, address);
+            this.presenter.onRegister(email, password, confirmPassword, firstName, lastName, address);
         });
 
-        mTvHasAccount.setOnClickListener(v -> {
-            mPresenter.onHasAccount();
+        this.tvHasAccount.setOnClickListener(v -> {
+            this.presenter.onHasAccount();
         });
 
 
-        return mRootView;
+        return this.root;
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
 
-        mContext = context;
+        this.context = context;
     }
 
     @Override
     public void setPresenter(RegisterContract.Presenter presenter) {
-        mPresenter = presenter;
+        this.presenter = presenter;
     }
 
     @Override
     public void setDialog(BeergramProgressDialog dialog) {
-        mDialog = dialog;
+        this.dialog = dialog;
     }
 
     @Override
     public void showDialogForCreatingUser() {
-        mDialog.showProgress(getString(R.string.loading_creating_user_text));
+        this.dialog.showProgress(getString(R.string.loading_creating_user_text));
     }
 
     @Override
     public void dismissDialog() {
-        mDialog.dismissProgress();
+        this.dialog.dismissProgress();
     }
 
     @Override
@@ -109,12 +106,12 @@ public class RegisterFragment extends Fragment implements RegisterContract.View 
 
     @Override
     public void notifyCreatedUser(String username) {
-        Toast.makeText(mContext, username + getString(R.string.user_created_notify_message), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this.context, username + getString(R.string.user_created_notify_message), Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void showHomeActivity() {
-        Intent accountIntent = new Intent(mContext, CameraActivity.class);
+        Intent accountIntent = new Intent(this.context, ProfileActivity.class);
 
         getActivity().finish();
 
@@ -123,26 +120,26 @@ public class RegisterFragment extends Fragment implements RegisterContract.View 
 
     @Override
     public void showBadEmailError() {
-        mEtEmail.setError(getString(R.string.bad_email_text));
+        this.etEmail.setError(getString(R.string.bad_email_text));
     }
 
     @Override
     public void showBadFirstNameError() {
-        mEtFirstName.setError(getString(R.string.bad_first_name_text));
+        this.etFirstName.setError(getString(R.string.bad_first_name_text));
     }
 
     @Override
     public void showBadLastNameError() {
-        mEtLastName.setError(getString(R.string.bad_last_name_text));
+        this.etLastName.setError(getString(R.string.bad_last_name_text));
     }
 
     @Override
     public void showBadConfirmPasswordError() {
-        mEtConfirmPassword.setError(getString(R.string.bad_confirm_password_text));
+        this.etConfirmPassword.setError(getString(R.string.bad_confirm_password_text));
     }
 
     @Override
     public void showBadPasswordError() {
-        mEtPassword.setError(getString(R.string.bad_password_text));
+        this.etPassword.setError(getString(R.string.bad_password_text));
     }
 }

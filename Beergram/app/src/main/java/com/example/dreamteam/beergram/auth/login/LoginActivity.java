@@ -12,10 +12,10 @@ import javax.inject.Inject;
 public class LoginActivity extends AppCompatActivity {
 
     @Inject
-    LoginPresenter mPresenter;
+    LoginPresenter presenter;
 
     @Inject
-    BeergramProgressDialog mDialog;
+    BeergramProgressDialog dialong;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
                 .build()
                 .inject(this);
 
-        mDialog.setContext(this);
-        loginFragment.setDialog(mDialog);
+        this.dialong.setContext(this);
+        loginFragment.setDialog(this.dialong);
     }
 }

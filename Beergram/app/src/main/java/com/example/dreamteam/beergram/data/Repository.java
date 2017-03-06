@@ -6,7 +6,6 @@ import com.example.dreamteam.beergram.data.authprovider.IAuthProvider;
 import com.example.dreamteam.beergram.data.local.ILocalRepository;
 import com.example.dreamteam.beergram.data.remote.IRemoteRepository;
 import com.example.dreamteam.beergram.data.storage.IStorageRepository;
-import com.example.dreamteam.beergram.models.Position;
 import com.example.dreamteam.beergram.models.Post;
 import com.example.dreamteam.beergram.models.User;
 import com.example.dreamteam.beergram.utils.IRandomStringProvider;
@@ -17,16 +16,15 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import io.reactivex.Observable;
-import io.reactivex.functions.Consumer;
 
 @Singleton
 public class Repository implements IRepository {
 
     private final IStorageRepository storageRef;
-    private final IAuthProvider mAuthProvider;
-    private final IRemoteRepository mRemoteRepository;
-    private final ILocalRepository mLocalRepository;
-    private final IRandomStringProvider mRandomStringProvider;
+    private final IAuthProvider authProvider;
+    private final IRemoteRepository remoteRepository;
+    private final ILocalRepository localRepository;
+    private final IRandomStringProvider randomStringProvider;
 
     @Inject
     public Repository(
@@ -36,20 +34,20 @@ public class Repository implements IRepository {
             ILocalRepository localRepository,
             IRandomStringProvider randomStringProvider) {
         this.storageRef = storageRef;
-        mAuthProvider = authProvider;
-        mRemoteRepository = remoteRepository;
-        mLocalRepository = localRepository;
-        mRandomStringProvider = randomStringProvider;
+        this.authProvider = authProvider;
+        this.remoteRepository = remoteRepository;
+        this.localRepository = localRepository;
+        this.randomStringProvider = randomStringProvider;
     }
 
     @Override
     public Observable<String> createUser(String email, String password, String firstName, String lastName, String address) {
         final String[] username = {null};
-        return mAuthProvider.createUser(email, password, firstName, lastName, address)
+        return authProvider.createUser(email, password, firstName, lastName, address)
                 .switchMap(user -> {
                     Log.d("asdf", "PENCDHO");
-                    username[0] = user.getmEmail();
-                    return mLocalRepository.addCurrentUser(user);
+                    username[0] = user.getEmail();
+                    return this.localRepository.addCurrentUser(user);
                 })
                 .map(isSuccess -> username[0]);
     }
@@ -57,41 +55,39 @@ public class Repository implements IRepository {
     @Override
     public Observable<String> loginUser(String email, String password) {
         final String[] username = {null};
-        return mAuthProvider.loginUser(email, password)
+        return this.authProvider.loginUser(email, password)
                 .switchMap(user -> {
-                    username[0] = user.getmFirstName();
-                    return mLocalRepository.addCurrentUser(user);
+                    username[0] = user.getFirstName();
+                    return this.localRepository.addCurrentUser(user);
                 })
                 .map(isSuccess -> username[0]);
     }
 
     @Override
     public Observable<User> getCurrentUser() {
-        return mLocalRepository.getCurrentUser();
+        return this.localRepository.getCurrentUser();
     }
 
     @Override
     public Observable<Boolean> logoutUser() {
-        return mAuthProvider.logoutUser()
-                .switchMap(isSuccess -> mLocalRepository.cleanCurrentUser());
+        return this.authProvider.logoutUser()
+                .switchMap(isSuccess -> this.localRepository.cleanCurrentUser());
     }
 
     @Override
     public Observable<User> updateAccountInfo(String firstName, String lastName, String email, String address, String credentialsEmail, String credentialsPassword) {
         User[] resUser = {null};
-        return mAuthProvider.updateAccountInfo(firstName, lastName, email, address, credentialsEmail, credentialsPassword)
+        return this.authProvider.updateAccountInfo(firstName, lastName, email, address, credentialsEmail, credentialsPassword)
                 .switchMap(user -> {
                     resUser[0] = user;
-                    return mLocalRepository.cleanCurrentUser();
+                    return this.localRepository.cleanCurrentUser();
                 })
-                .switchMap(isSuccess -> mLocalRepository.addCurrentUser(resUser[0]))
-                .switchMap(isSuccess -> mLocalRepository.getCurrentUser());
+                .switchMap(isSuccess -> this.localRepository.addCurrentUser(resUser[0]))
+                .switchMap(isSuccess -> this.localRepository.getCurrentUser());
     }
 
-    @Override
-    public Observable<Boolean> getIsFirstTimeForUser() {
-        return mLocalRepository.getCurrentUser()
-                .switchMap(u -> mLocalRepository.getIsFirstTimeForUser(u.getmEmail()));
+    public Observable<User[]> getAllUsers() {
+        return this.remoteRepository.getAllUsers();
     }
 
     @Override
@@ -101,15 +97,13 @@ public class Repository implements IRepository {
 
     @Override
     public Observable<Post> postLocationToFriends() {
-//        String id = mRandomStringProvider.nextString();
-//        mRemoteRepository.addPost(position, id);
         Post post = new Post(0, 0, "");
-        return mLocalRepository.getCurrentPosition()
+        return this.localRepository.getCurrentPosition()
             .switchMap(position -> {
                 post.setLatitude(position.getmLatitude());
                 post.setLongitude(position.getmLongtitude());
 
-                return mRemoteRepository.addPost(post);
+                return this.remoteRepository.addPost(post);
             });
     }
 }

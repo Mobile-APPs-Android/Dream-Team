@@ -1,10 +1,11 @@
 package com.example.dreamteam.beergram.search;
 
 import dagger.Module;
-        import dagger.Provides;
+import dagger.Provides;
 
 @Module
 public class SearchModule {
+
     private final SearchContract.View view;
 
     public SearchModule(SearchContract.View view){
@@ -12,7 +13,7 @@ public class SearchModule {
     }
 
     @Provides
-    SearchContract.View provideSearchView(){
+    SearchContract.View provideProfileView(){
         return this.view;
     }
 }

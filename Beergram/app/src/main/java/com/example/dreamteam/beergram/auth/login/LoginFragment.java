@@ -25,15 +25,15 @@ import com.example.dreamteam.beergram.utils.BeergramProgressDialog;
  */
 public class LoginFragment extends Fragment implements LoginContract.View {
 
-    private View mRootView;
-    private LoginContract.Presenter mPresenter;
+    private View root;
+    private LoginContract.Presenter presenter;
 
     private Button mBtnLogin;
-    private EditText mEtEmail, mEtPassword;
-    private TextView mTvCreateAccount, mTvResetPassword;
-    private Context mContext;
+    private EditText etEmail, etPassword;
+    private TextView tvCreateAccount, tvResetPassword;
+    private Context context;
 
-    private BeergramProgressDialog mDialog;
+    private BeergramProgressDialog dialog;
 
     public LoginFragment() {
     }
@@ -45,69 +45,69 @@ public class LoginFragment extends Fragment implements LoginContract.View {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mRootView = inflater.inflate(R.layout.fragment_login, container, false);
-        mBtnLogin = (Button) mRootView.findViewById(R.id.btn_login);
+        this.root = inflater.inflate(R.layout.fragment_login, container, false);
+        mBtnLogin = (Button) this.root.findViewById(R.id.btn_login);
 
-        mEtEmail = (EditText) mRootView.findViewById(R.id.et_email);
-        mEtPassword = (EditText) mRootView.findViewById(R.id.et_password);
+        this.etEmail = (EditText) this.root.findViewById(R.id.et_email);
+        this.etPassword = (EditText) this.root.findViewById(R.id.et_password);
 
-        mTvCreateAccount = (TextView) mRootView.findViewById(R.id.tv_no_account);
-        mTvResetPassword = (TextView) mRootView.findViewById(R.id.tv_reset_password);
+        this.tvCreateAccount = (TextView) this.root.findViewById(R.id.tv_no_account);
+        this.tvResetPassword = (TextView) this.root.findViewById(R.id.tv_reset_password);
 
         mBtnLogin.setOnClickListener(v -> {
-            String email = String.valueOf(mEtEmail.getText());
-            String password = String.valueOf(mEtPassword.getText());
-            mPresenter.loginUser(email, password);
+            String email = String.valueOf(this.etEmail.getText());
+            String password = String.valueOf(this.etPassword.getText());
+            this.presenter.loginUser(email, password);
         });
 
-        mTvCreateAccount.setOnClickListener(v -> mPresenter.onCreateAccount());
+        this.tvCreateAccount.setOnClickListener(v -> this.presenter.onCreateAccount());
 
-        mTvResetPassword.setOnClickListener(v -> mPresenter.onResetPassword());
+        this.tvResetPassword.setOnClickListener(v -> this.presenter.onResetPassword());
 
-        return mRootView;
+        return this.root;
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
 
-        mContext = context;
+        this.context = context;
     }
 
     @Override
     public void onResume() {
         super.onResume();
 
-        mPresenter.start();
+        this.presenter.start();
     }
 
     @Override
     public void setPresenter(LoginContract.Presenter presenter) {
-        mPresenter = presenter;
+        this.presenter = presenter;
     }
 
     @Override
     public void setDialog(BeergramProgressDialog progressDialog) {
-        mDialog = progressDialog;
+        this.dialog = progressDialog;
     }
 
     @Override
     public void showRegisterActivity() {
-        Intent intent = new Intent(mContext, RegisterActivity.class);
+        Intent intent = new Intent(this.context, RegisterActivity.class);
 
         startActivity(intent);
     }
 
     @Override
     public void showResetPasswordActivity() {
-        Intent intent = new Intent(mContext, RegisterActivity.class); // TODO change activity with ResetPasswordActivity
+        Intent intent = new Intent(this.context, RegisterActivity.class); // TODO change activity with ResetPasswordActivity
 
         startActivity(intent);
     }
 
     @Override
     public void showHomeActivity() {
-        Intent intent = new Intent(mContext, ProfileActivity.class);
+        Intent intent = new Intent(this.context, ProfileActivity.class);
 
         getActivity().finish();
 
@@ -116,7 +116,7 @@ public class LoginFragment extends Fragment implements LoginContract.View {
 
     @Override
     public void showLogoutActivity() {
-        Intent intet = new Intent(mContext, LogoutActivity.class); // TODO change activity with Logout Activity
+        Intent intet = new Intent(this.context, LogoutActivity.class); // TODO change activity with Logout Activity
 
         getActivity().finish();
         startActivity(intet);
@@ -124,27 +124,27 @@ public class LoginFragment extends Fragment implements LoginContract.View {
 
     @Override
     public void notifyLoggedInUser(String username) {
-        Toast.makeText(mContext, username + getString(R.string.user_loggedin_notify_message), Toast.LENGTH_SHORT)
+        Toast.makeText(this.context, username + getString(R.string.user_loggedin_notify_message), Toast.LENGTH_SHORT)
                 .show();
     }
 
     @Override
     public void notoifyBadEmailOrPassword() {
-        Toast.makeText(mContext, R.string.bad_credentials_message_text, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this.context, R.string.bad_credentials_message_text, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void showDialogForLoggingUser() {
-        mDialog.showProgress(getString(R.string.loading_logging_in_text));
+        this.dialog.showProgress(getString(R.string.loading_logging_in_text));
     }
 
     @Override
     public void showDialogForLoading() {
-        mDialog.showProgress(getString(R.string.loading_text));
+        this.dialog.showProgress(getString(R.string.loading_text));
     }
 
     @Override
     public void dismissDialog() {
-        mDialog.dismissProgress();
+        this.dialog.dismissProgress();
     }
 }

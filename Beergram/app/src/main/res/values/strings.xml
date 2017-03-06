@@ -37,7 +37,7 @@
     <string name="bad_last_name_text">Name must be at least 2 symbols</string>
     <string name="reauthentication_message_text">Let us make sure that it is you</string>
     <string name="bad_credentials_message_text">Bad email or password</string>
-    <string name="bad_password_text">Enter vali password</string>
+    <string name="bad_password_text">Enter valid password</string>
     <string name="confirm_text">Confirm</string>
     <string name="cancel_text">Cancel</string>
     <string name="bad_confirm_password_text">Passwords don\'t match</string>

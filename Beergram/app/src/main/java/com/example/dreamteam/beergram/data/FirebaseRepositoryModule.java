@@ -18,23 +18,20 @@ import dagger.Provides;
 @Module
 public class FirebaseRepositoryModule {
     private static final String USERS_DB_CHILD_STRING = "users";
-    private static final String POSTS_DB_CHILD_STRING = "posts";
 
     private final StorageReference storageRef;
-    private final FirebaseAuth mAuth;
-    private final FirebaseAuth.AuthStateListener mAuthListener;
+    private final FirebaseAuth auth;
+    private final FirebaseAuth.AuthStateListener authListener;
 
-    private final DatabaseReference mUsersData;
-    private final DatabaseReference mPostsData;
+    private final DatabaseReference usersData;
 
     public FirebaseRepositoryModule() {
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        mUsersData = FirebaseDatabase.getInstance().getReference().child(USERS_DB_CHILD_STRING);
-        mPostsData = FirebaseDatabase.getInstance().getReference().child(POSTS_DB_CHILD_STRING);
-        mAuth = FirebaseAuth.getInstance();
+        this.usersData = FirebaseDatabase.getInstance().getReference().child(USERS_DB_CHILD_STRING);
+        this.auth = FirebaseAuth.getInstance();
 
-        mAuthListener = firebaseAuth -> {
+        this.authListener = firebaseAuth -> {
             FirebaseUser user = firebaseAuth.getCurrentUser();
             if (user != null) {
                 Log.d("", "User NOT logged");
@@ -50,26 +47,19 @@ public class FirebaseRepositoryModule {
     @Singleton
     @Provides
     FirebaseAuth provideAuth() {
-        return mAuth;
+        return this.auth;
     }
 
     @Singleton
     @Provides
     FirebaseAuth.AuthStateListener provideListener() {
-        return mAuthListener;
+        return this.authListener;
     }
 
     @Singleton
     @Provides
     @Named("usersData")
     DatabaseReference provideUserDataReference() {
-        return mUsersData;
-    }
-
-    @Singleton
-    @Provides
-    @Named("postsData")
-    DatabaseReference providePostDataReference() {
-        return mPostsData;
+        return this.usersData;
     }
 }

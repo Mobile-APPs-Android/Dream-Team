@@ -17,9 +17,10 @@
 ## Dream-Team
 Created Line-of-business (LoB) Application Design and implement a native mobile application for Android. The application is touch-friendly and provide actual functionality which users can take advantage of. That is, the application is of value to the end user of a tablet or smartphone, enabling them to consume/produce real content.
 
-### Beergram
+### BEERGRAM
 
-This application is specially developed for Beer lovers. The main idea is to help users to find cool places to drink beer, to have better communication, easier life, and positive emotions. If you are Beer lover and don't have enough time to research the nearest, good places for beer. If you have to organize an event, if you have a date or just free time to take one beer etc. Here is the simple solve of everything!
+This application is specially developed for Beer lovers. The main idea is to help users to find cool places to drink beer, to invite friends, to have better communication, easier life, and positive emotions. If you are Beer lover and don't have enough time to research the nearest, good places for beer but want to drink good, cold beer. If you have to organize an event, if you have a date or just free time to take one beer etc. Here is the simple solve of everything! __Beergram!__
+This app will help you to find the best near places for drinking beer. You can check the map and find the nearest spot to your current location. Also, if you really like some place, you can tag yourself by sharing location and taking a cool picture. Every user can have privet account and profile. Phone list of contacts is automatically synchronized and applied to your Beergram profile.
 
 ### BEER ON THE GO APP
 This app would be popular among many men and women alike. With GPS capabilities, you would be able to locate the nearest bar, pub in that area.
