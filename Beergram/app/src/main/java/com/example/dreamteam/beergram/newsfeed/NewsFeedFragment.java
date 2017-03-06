@@ -1,21 +1,25 @@
 package com.example.dreamteam.beergram.newsfeed;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import android.widget.Toast;
 
 import com.example.dreamteam.beergram.R;
-
+import com.example.dreamteam.beergram.search.SearchActivity;
 
 
 public class NewsFeedFragment extends Fragment implements NewsfeedContract.View {
+    private final String SEARCH_VALUE = "searchValue";
+
     private View root;
     private NewsfeedContract.Presenter presenter;
     private Context context;
@@ -34,9 +38,16 @@ public class NewsFeedFragment extends Fragment implements NewsfeedContract.View 
 
         ListView lvPosts = (ListView) this.root.findViewById(R.id.lv_posts);
 
-        Button btn_post = (Button) this.root.findViewById(R.id.btn_post_location);
+        Button btnSearch = (Button) this.root.findViewById(R.id.btn_search);
+        Button btnPost = (Button) this.root.findViewById(R.id.btn_post_location);
+        EditText etSearch = (EditText) this.root.findViewById(R.id.et_search);
 
-        btn_post.setOnClickListener((view) ->{
+        btnSearch.setOnClickListener((view) -> {
+            String searchValue = etSearch.getText().toString();
+            this.showSearchActivity(searchValue);
+        });
+
+        btnPost.setOnClickListener((view) ->{
             this.presenter.postLocationToFriends();
         });
 
@@ -81,7 +92,17 @@ public class NewsFeedFragment extends Fragment implements NewsfeedContract.View 
         this.presenter = presenter;
     }
 
+    @Override
     public void notifyPostShared() {
         Toast.makeText(this.context, "Location shared to friends.", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showSearchActivity(String searchValue) {
+        Intent intent = new Intent(this.context, SearchActivity.class);
+
+        intent.putExtra(SEARCH_VALUE, searchValue);
+
+        startActivity(intent);
     }
 }

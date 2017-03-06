@@ -6,6 +6,8 @@ import com.example.dreamteam.beergram.BaseView;
 public interface NewsfeedContract {
     interface View extends BaseView<NewsfeedContract.Presenter> {
         void notifyPostShared();
+
+        void showSearchActivity(String searchValue);
     }
 
     interface Presenter extends BasePresenter {

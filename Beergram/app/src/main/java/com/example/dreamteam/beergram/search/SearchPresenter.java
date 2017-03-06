@@ -1,20 +1,30 @@
 package com.example.dreamteam.beergram.search;
 
+import android.widget.TextView;
+
 import com.example.dreamteam.beergram.data.IRepository;
+import com.example.dreamteam.beergram.profile.*;
 
 import javax.inject.Inject;
 
-public class SearchPresenter implements SearchContract.Presenter{
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
+
+public class SearchPresenter implements SearchContract.Presenter {
     private IRepository repository;
     private SearchContract.View view;
 
     @Inject
-    public void SearchPresenter(SearchContract.View view, IRepository repository) {
+    public SearchPresenter(SearchContract.View view, IRepository repository) {
         this.view = view;
         this.repository = repository;
     }
 
-    @Override
+    @Inject
+    public void setupListener() {
+        this.view.setPresenter(this);
+    }
+
     public void start() {
 
     }
