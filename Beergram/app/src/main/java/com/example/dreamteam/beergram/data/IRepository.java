@@ -1,5 +1,6 @@
 package com.example.dreamteam.beergram.data;
 
+import com.example.dreamteam.beergram.models.Position;
 import com.example.dreamteam.beergram.models.Post;
 import com.example.dreamteam.beergram.models.User;
 
@@ -24,4 +25,12 @@ public interface IRepository {
     Observable<Boolean> savePicture(File image);
 
     public Observable<Post> postLocationToFriends();
+
+    Observable<String> getAddress(Position position);
+
+    Observable<Position> getCurrentPosition();
+
+    Observable<Boolean> connectLocationListener();
+
+    Observable<Boolean> disconnectLocationListener();
 }

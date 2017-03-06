@@ -6,6 +6,7 @@ import com.example.dreamteam.beergram.data.authprovider.IAuthProvider;
 import com.example.dreamteam.beergram.data.local.ILocalRepository;
 import com.example.dreamteam.beergram.data.remote.IRemoteRepository;
 import com.example.dreamteam.beergram.data.storage.IStorageRepository;
+import com.example.dreamteam.beergram.models.Position;
 import com.example.dreamteam.beergram.models.Post;
 import com.example.dreamteam.beergram.models.User;
 import com.example.dreamteam.beergram.utils.IRandomStringProvider;
@@ -106,5 +107,25 @@ public class Repository implements IRepository {
 
                 return this.remoteRepository.addPost(post);
             });
+    }
+
+    @Override
+    public Observable<String> getAddress(Position position) {
+        return  this.localRepository.getAddress(position);
+    }
+
+    @Override
+    public Observable<Position> getCurrentPosition() {
+        return this.localRepository.getCurrentPosition();
+    }
+
+    @Override
+    public Observable<Boolean> connectLocationListener() {
+        return this.localRepository.connectLocationListener();
+    }
+
+    @Override
+    public Observable<Boolean> disconnectLocationListener() {
+        return this.localRepository.disconnectLocationListener();
     }
 }
