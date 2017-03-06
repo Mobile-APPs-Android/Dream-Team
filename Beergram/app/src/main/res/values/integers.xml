@@ -3,5 +3,8 @@
     <integer name="CameraDrawerItemIdentifier">1</integer>
     <integer name="NewsFeedDrawerItemIdentifier">2</integer>
     <integer name="ProfileDrawerItemIdentifier">3</integer>
+    <integer name="AboutAppDrawerItemIdentifier">4</integer>
+    <integer name="LogoutDrawerItemIdentifier">5</integer>
+    <integer name="ContactsItemIdentifier">6</integer>
 </resources>
 

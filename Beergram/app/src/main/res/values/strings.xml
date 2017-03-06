@@ -5,6 +5,8 @@
     <string name="CameraDrawerItemName">Take Picture</string>
     <string name="NewsFeedDrawerItemName">Activity feed</string>
     <string name="ProfileDrawerItemName">My Profile</string>
+    <string name="AboutAppDrawerItemName">About the APP</string>
+    <string name="LogoutDrawerItemName">Logout</string>
 
     <string name="email_example_text">Email</string>
     <string name="password_example_text">Password</string>
@@ -26,7 +28,7 @@
     <string name="loading_creating_user_text">Creating user…</string>
     <string name="loading_logging_in_text">Logging in…</string>
     <string name="loading_text">Loading..</string>
-    <string name="loading_no_text"/>
+    <string name="loading_no_text" />
     <string name="logout_btn_text">Logout</string>
     <string name="logout_form_title_text">Are you sure you want to logout?</string>
     <string name="loading_logging_out_text">Logging out…</string>
@@ -93,6 +95,6 @@
     <string name="s">SEARCH</string>
     <string name="b">SEARCH</string>
 
-
+    <string name="text_with_paragraphs">This application is specially developed for Beer lovers. The main idea is to help users to find cool places to drink beer, to invite friends, to have better communication, easier life, and positive emotions. If you are Beer lover and don\'t have enough time to research the nearest, good places for beer but want to drink good, cold beer. If you have to organize an event, if you have a date or just free time to take one beer etc. Here is the simple solve of everything! Beergram! This app will help you to find the best near places for drinking beer. You can check the map and find the nearest spot to your current location. Also, if you really like some place, you can tag yourself by sharing location and taking a cool picture. Every user can have privet account and profile.Phone list of contacts is automatically synchronized and applied to your Beergram profile.</string>
 
 </resources>
