@@ -1,19 +1,20 @@
 package com.example.dreamteam.beergram.search;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
+import com.example.dreamteam.beergram.BeergramApplication;
 import com.example.dreamteam.beergram.R;
+import com.example.dreamteam.beergram.profile.DaggerProfileComponent;
 
-public class SearchActivity extends Activity {
+import javax.inject.Inject;
+
+public class SearchActivity extends AppCompatActivity {
+
+    @Inject
+    SearchPresenter presenter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
-    }
-    /*
-        @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
@@ -30,12 +31,12 @@ public class SearchActivity extends Activity {
                     .commit();
         }
 
-        DaggerCameraComponent
+        DaggerSearchComponent
                 .builder()
                 .repositoryComponent(((BeergramApplication)getApplication())
-                        .getRepositoryComponent())
+                .getRepositoryComponent())
                 .searchModule(new SearchModule(searchFragment))
                 .build()
+                .inject(this);
     }
-     */
 }
