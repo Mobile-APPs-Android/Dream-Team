@@ -40,7 +40,7 @@
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:text="@string/logout_btn_text"
-           android:textSize="20dp"
+           android:textSize="@dimen/margin_20"
            android:textColor="@color/white"
            />
 

@@ -13,7 +13,8 @@
     <fragment
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:name="com.example.dreamteam.beergram.drawer.DrawerFragment" />
+        android:name="com.example.dreamteam.beergram.drawer.DrawerFragment"
+        android:layout_marginBottom="@dimen/margin_20"/>
 
     <FrameLayout
         android:id="@+id/fragment_container"

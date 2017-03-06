@@ -85,6 +85,8 @@
     <string name="share_location_slogan">Looking for beer mate? Invite someone by Beergram!</string>
     <string name="location_btn_txt">SHARE YOUR LOCATION</string>
     <string name="btn_search_txt">SEARCH</string>
+    <string name="add_profile_pic">ADD PROFILE PIC</string>
+    <string name="change_account_info">CHANGE ACCOUNT</string>
     <string name="g">SHARE YOUR LOCATION</string>
 
 </resources>
