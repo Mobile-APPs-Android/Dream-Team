@@ -11,4 +11,5 @@ import io.reactivex.Observable;
 public interface IRemoteRepository {
     Observable<Post> addPost(Post post);
 
+    public Observable<ArrayList<String>> getAllUserEmails();
 }
