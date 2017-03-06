@@ -87,6 +87,12 @@
     <string name="btn_search_txt">SEARCH</string>
     <string name="add_profile_pic">ADD PROFILE PIC</string>
     <string name="change_account_info">CHANGE ACCOUNT</string>
-    <string name="g">SHARE YOUR LOCATION</string>
+    <string name="search_btn">SEARCH</string>
+    <string name="account">Already has account?</string>
+
+    <string name="s">SEARCH</string>
+    <string name="b">SEARCH</string>
+
+
 
 </resources>

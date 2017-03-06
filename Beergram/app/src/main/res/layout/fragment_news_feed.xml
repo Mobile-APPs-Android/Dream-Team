@@ -15,16 +15,15 @@
             >
             <EditText
                 android:id="@+id/et_search"
-                android:layout_width="fill_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/search_example_text"
                 android:textColorHint="@color/iron"
                 android:textColor="@color/white"
                 android:inputType="textEmailAddress"
                 android:layout_weight="1"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/margin_10"
                 />
-            <!--android:icon="@mipmap/ic_search"-->
             <Button
                 android:background="@color/btn_bg"
                 android:id="@+id/btn_search"
@@ -32,20 +31,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="SEARCH"
-                android:layout_marginTop="10dp"
+                android:text="@string/search_btn"
                 />
         </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp" >
+        android:layout_marginTop="@dimen/margin_10" >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/iron"
-                android:text="@string/share_location_slogan"/>
+                android:text="@string/share_location_slogan" />
             <Button
                 android:id="@+id/btn_post_location"
                 android:layout_width="match_parent"
@@ -54,9 +52,10 @@
                 android:shadowColor="@color/black"
                 android:textColor="@color/white"
                 android:padding="10dp"
-                android:layout_marginTop="15dp"
-                android:textSize="20dp"
-                android:text="@string/location_btn_txt"/>
+                android:layout_marginTop="@dimen/margin_5"
+                android:textSize="@dimen/sp_20"
+                android:text="@string/location_btn_txt"
+                android:layout_marginBottom="@dimen/margin_5"/>
         </LinearLayout>
         <ListView
             android:id="@+id/lv_posts"

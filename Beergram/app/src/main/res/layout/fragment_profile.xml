@@ -136,7 +136,7 @@
                 android:text="@string/change_account_info"
                 android:textSize="@dimen/margin_15"
                 android:textColor="@color/white"
-                android:layout_marginBottom="3dp"
+                android:layout_marginBottom="@dimen/margin_3"
                 />
             <Button
                 android:id="@+id/btn_profilePic"
@@ -146,7 +146,7 @@
                 android:text="@string/add_profile_pic"
                 android:textSize="@dimen/margin_15"
                 android:textColor="@color/white"
-                android:layout_marginBottom="3dp"
+                android:layout_marginBottom="@dimen/margin_3"
                 />
             <Button
                 android:id="@+id/btn_logout"
@@ -156,7 +156,7 @@
                 android:text="@string/logout_btn_text"
                 android:textSize="@dimen/margin_15"
                 android:textColor="@color/white"
-                android:layout_marginBottom="3dp"
+                android:layout_marginBottom="@dimen/margin_3"
                 />
         </LinearLayout>
     </LinearLayout>
