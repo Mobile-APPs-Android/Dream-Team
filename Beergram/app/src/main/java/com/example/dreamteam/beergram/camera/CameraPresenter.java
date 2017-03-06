@@ -2,11 +2,11 @@ package com.example.dreamteam.beergram.camera;
 
 import com.example.dreamteam.beergram.data.IRepository;
 
-import java.io.File;
-
 import javax.inject.Inject;
 
-import pl.aprilapps.easyphotopicker.EasyImage;
+import java.io.File;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 public class CameraPresenter implements CameraContract.Presenter{
     private IRepository repository;
@@ -26,15 +26,17 @@ public class CameraPresenter implements CameraContract.Presenter{
     @Override
     public void saveImage(File imageFile) {
         this.view.showNewsFeedActivity();
-//        this.repository.savePicture(imageFile)
-//            .subscribe((result) -> {
-//                if (result) {
-//                    this.view.notifyPictureSavedSuccessful();
-//                    this.view.showNewsFeedActivity();
-//                }
-//                else {
-//                    this.view.notifyBadPicture();
-//                }
-//            });
+        this.repository.savePicture(imageFile)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe((result) -> {
+                if (result) {
+                    this.view.notifyPictureSavedSuccessful();
+                    this.view.showNewsFeedActivity();
+                }
+                else {
+                    this.view.notifyBadPicture();
+                }
+            });
     }
 }

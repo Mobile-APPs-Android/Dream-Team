@@ -1,20 +1,20 @@
 package com.example.dreamteam.beergram.profile;
 
-import android.app.Activity;
-import android.os.Bundle;
 
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import com.example.dreamteam.beergram.BeergramApplication;
 import com.example.dreamteam.beergram.R;
 
-public class ProfileActivity extends Activity {
+import javax.inject.Inject;
+
+public class ProfileActivity extends AppCompatActivity {
+
+    @Inject
+    ProfilePresenter presenter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
-    }
-
-    /*
-        @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
@@ -31,12 +31,12 @@ public class ProfileActivity extends Activity {
                     .commit();
         }
 
-        DaggerCameraComponent
+        DaggerProfileComponent
                 .builder()
                 .repositoryComponent(((BeergramApplication)getApplication())
                         .getRepositoryComponent())
                 .profileModule(new ProfileModule(profileFragment))
                 .build()
+                .inject(this);
     }
-     */
 }

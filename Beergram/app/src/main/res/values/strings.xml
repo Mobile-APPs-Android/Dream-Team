@@ -2,14 +2,9 @@
 <resources>
     <string name="app_name">Beergram</string>
 
-    <string name="HomeDrawerItemName">Home</string>
-    <string name="ProductsDrawerItemName">Products</string>
-    <string name="FavouriteDrawerItemName">Favourites</string>
-    <string name="CartDrawerItemName">Cart</string>
-    <string name="MyAccountDrawerName">My Account</string>
-    <string name="NotificationsDrawerName">Notifications</string>
-    <string name="AboutUsDrawerItemName">About us</string>
-    <string name="LoginLogoutDrawerName">LogIn</string>
+    <string name="CameraDrawerItemName">Take Picture</string>
+    <string name="NewsFeedDrawerItemName">Activity feed</string>
+    <string name="ProfileDrawerItemName">My Profile</string>
 
     <string name="email_example_text">Email</string>
     <string name="password_example_text">Password</string>

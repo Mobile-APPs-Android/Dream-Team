@@ -11,8 +11,6 @@ import android.widget.Toast;
 
 import com.example.dreamteam.beergram.R;
 import com.example.dreamteam.beergram.newsfeed.NewsfeedActivity;
-import com.example.dreamteam.beergram.newsfeed.NewsfeedModule;
-import com.example.dreamteam.beergram.newsfeed.NewsfeedModule_ProvideNewsfeedViewFactory;
 
 import java.io.File;
 
@@ -21,9 +19,7 @@ import pl.aprilapps.easyphotopicker.EasyImage;
 public class CameraFragment extends Fragment implements CameraContract.View, EasyImage.Callbacks {
     private View rootView;
     private CameraContract.Presenter presenter;
-
     private Context context;
-
 
     public CameraFragment() {
     }

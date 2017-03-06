@@ -1,8 +1,8 @@
 package com.example.dreamteam.beergram.auth.login;
 
 import com.example.dreamteam.beergram.data.RepositoryComponent;
-import com.example.dreamteam.beergram.utils.FragmentScoped;
 
+import com.example.dreamteam.beergram.utils.FragmentScoped;
 import dagger.Component;
 
 @FragmentScoped

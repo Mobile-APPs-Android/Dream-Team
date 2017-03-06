@@ -5,31 +5,16 @@ import com.example.dreamteam.beergram.BaseView;
 
 import java.io.File;
 
-import pl.aprilapps.easyphotopicker.EasyImage;
-
-
 public interface CameraContract {
 
-    interface View extends BaseView<com.example.dreamteam.beergram.camera.CameraContract.Presenter> {
-//        void setDialog(BeergramProgressDialog progressDialog);
-//
-//        void showRegisterActivity();
-//
-//        void showResetPasswordActivity();
-//
+    interface View extends BaseView<Presenter> {
+
         void showNewsFeedActivity();
-//
-//        void showLogoutActivity();
-//
+
         void notifyPictureSavedSuccessful();
 
         void notifyBadPicture();
-//
-//        void showDialogForLoggingUser();
-//
-//        void showDialogForLoading();
-//
-//        void dismissDialog();
+
     }
 
     interface Presenter extends BasePresenter {

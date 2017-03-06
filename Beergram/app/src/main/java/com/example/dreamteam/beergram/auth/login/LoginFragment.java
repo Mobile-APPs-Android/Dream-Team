@@ -17,6 +17,7 @@ import com.example.dreamteam.beergram.auth.logout.LogoutActivity;
 import com.example.dreamteam.beergram.auth.register.RegisterActivity;
 import com.example.dreamteam.beergram.camera.CameraActivity;
 import com.example.dreamteam.beergram.newsfeed.NewsfeedActivity;
+import com.example.dreamteam.beergram.profile.ProfileActivity;
 import com.example.dreamteam.beergram.utils.BeergramProgressDialog;
 
 /**
@@ -106,7 +107,7 @@ public class LoginFragment extends Fragment implements LoginContract.View {
 
     @Override
     public void showHomeActivity() {
-        Intent intent = new Intent(mContext, NewsfeedActivity.class);
+        Intent intent = new Intent(mContext, ProfileActivity.class);
 
         getActivity().finish();
 

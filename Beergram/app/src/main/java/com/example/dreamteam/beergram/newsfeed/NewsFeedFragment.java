@@ -3,18 +3,16 @@ package com.example.dreamteam.beergram.newsfeed;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.TextViewCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
+
 import android.widget.Toast;
 
 import com.example.dreamteam.beergram.R;
-import com.example.dreamteam.beergram.data.LocationProvider;
-import com.example.dreamteam.beergram.models.Position;
+
 
 
 public class NewsFeedFragment extends Fragment implements NewsfeedContract.View {

@@ -6,7 +6,11 @@ import android.os.Bundle;
 import com.example.dreamteam.beergram.BeergramApplication;
 import com.example.dreamteam.beergram.R;
 
+import javax.inject.Inject;
+
 public class CameraActivity extends AppCompatActivity {
+//    @Inject
+//    CameraPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +37,5 @@ public class CameraActivity extends AppCompatActivity {
                 .build()
                 .inject(this);
 
-//        mDialog.setContext(this);
-//        loginFragment.setDialog(mDialog);
     }
 }

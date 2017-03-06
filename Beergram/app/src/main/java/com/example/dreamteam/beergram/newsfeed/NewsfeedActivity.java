@@ -33,7 +33,7 @@ public class NewsfeedActivity extends AppCompatActivity {
         DaggerNewsfeedComponent
                 .builder()
                 .repositoryComponent(((BeergramApplication)getApplication())
-                        .getRepositoryComponent())
+                .getRepositoryComponent())
                 .newsfeedModule(new NewsfeedModule(newsFeedFragment))
                 .build()
                 .inject(this);
