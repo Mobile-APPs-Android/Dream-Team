@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.dreamteam.beergram.R;
 
@@ -27,9 +28,12 @@ public class AboutAppFragment extends Fragment implements AboutAppContract.View 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        this.rootView = inflater.inflate(R.layout.fragment_camera, container, false);
+        this.rootView = inflater.inflate(R.layout.fragment_about_app, container, false);
 
-        EasyImage.openCamera(this, 0);
+        TextView tvApp = (TextView) this.rootView.findViewById(R.id.tv_appname_value);
+        TextView tvText = (TextView) this.rootView.findViewById(R.id.tv_text_value);
+
+        //this.presenter.setAboutAppValues(tvApp, tvText);
 
         return this.rootView;
     }

@@ -47,4 +47,12 @@ public class ProfileFragment extends Fragment implements ProfileContract.View {
     public void setPresenter(ProfileContract.Presenter presenter) {
         this.presenter = presenter;
     }
+
+//    @Override
+//    public void showLogoutActivity() {
+//        Intent intet = new Intent(this.context, LogoutActivity.class);
+//
+//        getActivity().finish();
+//        startActivity(intet);
+//    }
 }
