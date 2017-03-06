@@ -6,6 +6,10 @@ import com.example.dreamteam.beergram.data.IRepository;
 import com.example.dreamteam.beergram.models.User;
 import com.example.dreamteam.beergram.profile.*;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+
 import javax.inject.Inject;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -30,12 +34,26 @@ public class SearchPresenter implements SearchContract.Presenter {
 
     }
 
-    public void getAllUsers() {
+    public void getAllUsers(String searchValue) {
         this.repository.getAllUsers()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(users -> {
-                this.view.setupAdapter(users);
+            .subscribe(userEmails -> {
+                userEmails = filterUserEmails(userEmails, searchValue);
+                this.view.setupAdapter(userEmails);
             });
+    }
+
+    public ArrayList<String> filterUserEmails(ArrayList<String> userEmails, String searchfield){
+        Iterator<String> stringIterator = userEmails.iterator();
+
+        while (stringIterator.hasNext()) {
+            String string = stringIterator.next();
+            if (!string.contains(searchfield)) {
+                stringIterator.remove();
+            }
+        }
+
+        return userEmails;
     }
 }

@@ -9,6 +9,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
@@ -16,6 +19,7 @@ import javax.inject.Singleton;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.internal.functions.ObjectHelper;
 
 @Singleton
 public class FirebaseRemoteRepository implements IRemoteRepository {
@@ -29,20 +33,33 @@ public class FirebaseRemoteRepository implements IRemoteRepository {
         this.usersData = usersData;
     }
 
-    public Observable<User[]> getAllUsers() {
-        return Observable.create(new ObservableOnSubscribe<User[]>() {
+    public Observable<ArrayList<String>> getAllUserEmails() {
+        return Observable.create(new ObservableOnSubscribe<ArrayList<String>>() {
             @Override
-            public void subscribe(ObservableEmitter<User[]> e) throws Exception {
-                usersData.child("users").addValueEventListener(new ValueEventListener() {
+            public void subscribe(ObservableEmitter<ArrayList<String>> e) throws Exception {
+                usersData.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        User[] users = dataSnapshot.getValue(User[].class);
+                    public  void onDataChange(DataSnapshot dataSnapshot) {
+                        ArrayList<String> users = collectUsers((Map<String,Object>) dataSnapshot.getValue());
                         e.onNext(users);
                     }
 
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
 
+                    }
+
+                    private ArrayList<String> collectUsers(Map<String, Object> users) {
+                        ArrayList<String> usersEmails = new ArrayList<>();
+                        for (Map.Entry<String, Object> entry : users.entrySet()){
+
+                            Map singleUser = (Map) entry.getValue();
+                            String userEmail = (String) singleUser.get("email");
+                            userEmail = userEmail.split("@")[0];
+                            usersEmails.add(userEmail);
+                        }
+
+                        return usersEmails;
                     }
                 });
             }

@@ -4,6 +4,7 @@ import com.example.dreamteam.beergram.models.Post;
 import com.example.dreamteam.beergram.models.User;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import io.reactivex.Observable;
 
@@ -18,7 +19,7 @@ public interface IRepository {
 
     Observable<User> updateAccountInfo(String firstName, String lastName, String email, String address, String credentialsEmail, String credentialsPassword);
 
-    public Observable<User[]> getAllUsers();
+    public Observable<ArrayList<String>> getAllUsers();
 
     Observable<Boolean> savePicture(File image);
 

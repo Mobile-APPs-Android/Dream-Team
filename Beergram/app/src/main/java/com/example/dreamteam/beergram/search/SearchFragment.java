@@ -15,7 +15,11 @@ import android.widget.TextView;
 import com.example.dreamteam.beergram.R;
 import com.example.dreamteam.beergram.models.User;
 
+import java.util.ArrayList;
+
 public class SearchFragment extends Fragment implements SearchContract.View {
+    private final String SEARCH_VALUE = "searchValue";
+
     private View root;
     private SearchContract.Presenter presenter;
     private Context context;
@@ -31,7 +35,8 @@ public class SearchFragment extends Fragment implements SearchContract.View {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         this.root = inflater.inflate(R.layout.fragment_search, container, false);
 
-//        this.presenter.getAllUsers();
+        String searchValue = this.getActivity().getIntent().getStringExtra(SEARCH_VALUE);
+        this.presenter.getAllUsers(searchValue);
 
         return this.root;
     }
@@ -48,9 +53,9 @@ public class SearchFragment extends Fragment implements SearchContract.View {
         this.presenter = presenter;
     }
 
-    public void setupAdapter(User[] users) {
-        ArrayAdapter<User> userAdapter =
-                new ArrayAdapter<User>(this.root.getContext(), -1, users) {
+    public void setupAdapter(ArrayList<String> userEmails) {
+        ArrayAdapter<String> userAdapter =
+                new ArrayAdapter<String>(this.root.getContext(), -1, userEmails) {
                     @NonNull
                     @Override
                     public View getView(int position, View convertView, ViewGroup parent) {
@@ -62,8 +67,7 @@ public class SearchFragment extends Fragment implements SearchContract.View {
 
                         TextView tvTitle = (TextView) view.findViewById(R.id.user_list_title);
 
-                        String email = this.getItem(position).getEmail();
-                        tvTitle.setText(email);
+                        tvTitle.setText(this.getItem(position));
 
                         return view;
                     }

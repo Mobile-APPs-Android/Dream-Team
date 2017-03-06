@@ -11,6 +11,7 @@ import com.example.dreamteam.beergram.models.User;
 import com.example.dreamteam.beergram.utils.IRandomStringProvider;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -86,8 +87,8 @@ public class Repository implements IRepository {
                 .switchMap(isSuccess -> this.localRepository.getCurrentUser());
     }
 
-    public Observable<User[]> getAllUsers() {
-        return this.remoteRepository.getAllUsers();
+    public Observable<ArrayList<String>> getAllUsers() {
+        return this.remoteRepository.getAllUserEmails();
     }
 
     @Override
