@@ -14,23 +14,19 @@ import android.widget.Toast;
 
 import com.example.dreamteam.beergram.R;
 import com.example.dreamteam.beergram.auth.login.LoginActivity;
-import com.example.dreamteam.beergram.auth.login.LoginFragment;
 import com.example.dreamteam.beergram.utils.BeergramProgressDialog;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class LogoutFragment extends Fragment implements LogoutContract.View {
 
     private Button btnLogout;
     private TextView tvUserNames;
 
-    private LogoutContract.Presenter mPresenter;
-    private BeergramProgressDialog mDialog;
-    private Context mContext;
+    private LogoutContract.Presenter presenter;
+    private BeergramProgressDialog dialog;
+    private Context context;
 
     public LogoutFragment() {
-        // Required empty public constructor
     }
 
     public static LogoutFragment newInstance() {
@@ -45,7 +41,7 @@ public class LogoutFragment extends Fragment implements LogoutContract.View {
         btnLogout = (Button) mRootView.findViewById(R.id.btn_logout);
         tvUserNames = (TextView) mRootView.findViewById(R.id.tv_user_names);
 
-        btnLogout.setOnClickListener(v -> mPresenter.onBtnLogout());
+        btnLogout.setOnClickListener(v -> this.presenter.onBtnLogout());
 
         return mRootView;
     }
@@ -54,19 +50,19 @@ public class LogoutFragment extends Fragment implements LogoutContract.View {
     public void onAttach(Context context) {
         super.onAttach(context);
 
-        mContext = context;
+        this.context = context;
     }
 
     @Override
     public void onResume() {
         super.onResume();
 
-        mPresenter.start();
+        this.presenter.start();
     }
 
     @Override
     public void setPresenter(LogoutContract.Presenter presenter) {
-        mPresenter = presenter;
+        this.presenter = presenter;
     }
 
     @Override
@@ -76,27 +72,27 @@ public class LogoutFragment extends Fragment implements LogoutContract.View {
 
     @Override
     public void setDialog(BeergramProgressDialog dialog) {
-        mDialog = dialog;
+        this.dialog = dialog;
     }
 
     @Override
     public void showDialogLoading() {
-        mDialog.showProgress(getString(R.string.loading_text));
+        this.dialog.showProgress(getString(R.string.loading_text));
     }
 
     @Override
     public void showDialogLoggingOut() {
-        mDialog.showProgress(getString(R.string.loading_logging_out_text));
+        this.dialog.showProgress(getString(R.string.loading_logging_out_text));
     }
 
     @Override
     public void dismissDialog() {
-        mDialog.dismissProgress();
+        this.dialog.dismissProgress();
     }
 
     @Override
     public void showLoginActivity() {
-        Intent intet = new Intent(mContext, LoginActivity.class);
+        Intent intet = new Intent(this.context, LoginActivity.class);
 
         getActivity().finish();
         startActivity(intet);
@@ -104,6 +100,6 @@ public class LogoutFragment extends Fragment implements LogoutContract.View {
 
     @Override
     public void notifyUserLogout() {
-        Toast.makeText(mContext, "User logged out", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this.context, "User logged out", Toast.LENGTH_SHORT).show();
     }
 }

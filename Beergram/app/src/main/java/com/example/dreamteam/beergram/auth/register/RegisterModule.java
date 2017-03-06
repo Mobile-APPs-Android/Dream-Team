@@ -6,14 +6,14 @@ import dagger.Provides;
 @Module
 public class RegisterModule {
 
-    private final RegisterContract.View mView;
+    private final RegisterContract.View view;
 
     public RegisterModule(RegisterContract.View view) {
-        mView = view;
+        this.view = view;
     }
 
     @Provides
     RegisterContract.View provideRegisteVier() {
-        return mView;
+        return this.view;
     }
 }

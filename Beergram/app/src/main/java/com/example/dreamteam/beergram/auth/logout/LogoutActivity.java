@@ -12,10 +12,10 @@ import javax.inject.Inject;
 public class LogoutActivity extends AppCompatActivity {
 
     @Inject
-    LogoutPresenter mPresneter;
+    LogoutPresenter presenter;
 
     @Inject
-    BeergramProgressDialog mDialog;
+    BeergramProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class LogoutActivity extends AppCompatActivity {
                 .build()
                 .inject(this);
 
-        mDialog.setContext(this);
-        logoutFragment.setDialog(mDialog);
+        this.dialog.setContext(this);
+        logoutFragment.setDialog(this.dialog);
     }
 }

@@ -6,14 +6,14 @@ import dagger.Provides;
 @Module
 public class LoginModule {
 
-    private final LoginContract.View mView;
+    private final LoginContract.View view;
 
     public LoginModule(LoginContract.View view){
-        mView = view;
+        this.view = view;
     }
 
     @Provides
     LoginContract.View provideLoginView(){
-        return mView;
+        return this.view;
     }
 }

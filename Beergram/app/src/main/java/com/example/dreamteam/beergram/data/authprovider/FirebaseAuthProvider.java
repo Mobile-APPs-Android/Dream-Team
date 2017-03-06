@@ -1,7 +1,6 @@
 package com.example.dreamteam.beergram.data.authprovider;
 
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.example.dreamteam.beergram.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,15 +25,15 @@ import io.reactivex.ObservableOnSubscribe;
 @Singleton
 public class FirebaseAuthProvider implements IAuthProvider {
 
-    final FirebaseAuth mAuth;
-    final FirebaseAuth.AuthStateListener mAuthListener;
-    final DatabaseReference mUsersData;
+    final FirebaseAuth auth;
+    final FirebaseAuth.AuthStateListener authListener;
+    final DatabaseReference usersData;
 
     @Inject
     public FirebaseAuthProvider(FirebaseAuth auth, FirebaseAuth.AuthStateListener authListener, @Named("usersData") DatabaseReference userData) {
-        mAuth = auth;
-        mAuthListener = authListener;
-        mUsersData = userData;
+        this.auth = auth;
+        this.authListener = authListener;
+        this.usersData = userData;
     }
 
     @Override
@@ -42,13 +41,13 @@ public class FirebaseAuthProvider implements IAuthProvider {
         return Observable.create(new ObservableOnSubscribe<User>() {
             @Override
             public void subscribe(ObservableEmitter<User> e) throws Exception {
-                mAuth.createUserWithEmailAndPassword(email, password)
+                auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
-                            FirebaseUser user = mAuth.getCurrentUser();
+                            FirebaseUser user = auth.getCurrentUser();
 
                             User newUser = new User(email, firstName, lastName, address);
-                            mUsersData.child(user.getUid()).setValue(newUser);
+                            usersData.child(user.getUid()).setValue(newUser);
 
                             e.onNext(newUser);
                         }
@@ -63,14 +62,13 @@ public class FirebaseAuthProvider implements IAuthProvider {
         return Observable.create(new ObservableOnSubscribe<User>() {
             @Override
             public void subscribe(ObservableEmitter<User> e) throws Exception {
-                mAuth.signInWithEmailAndPassword(email, password)
+                auth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(task -> {
                             if (task.isSuccessful()) {
-                                FirebaseUser currUser = mAuth.getCurrentUser();
+                                FirebaseUser currUser = auth.getCurrentUser();
 
                                 if (currUser != null) {
-                                    mUsersData
-                                            .child(currUser.getUid())
+                                    usersData.child(currUser.getUid())
                                             .addValueEventListener(new ValueEventListener() {
                                                 @Override
                                                 public void onDataChange(DataSnapshot dataSnapshot) {
@@ -98,16 +96,16 @@ public class FirebaseAuthProvider implements IAuthProvider {
         return Observable.create(new ObservableOnSubscribe<User>() {
             @Override
             public void subscribe(ObservableEmitter<User> e) throws Exception {
-                FirebaseUser currUser = mAuth.getCurrentUser();
+                FirebaseUser currUser = auth.getCurrentUser();
 
                 if (currUser != null) {
-                    mUsersData
+                    usersData
                             .child(currUser.getUid())
                             .addValueEventListener(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(DataSnapshot dataSnapshot) {
                                     User user = dataSnapshot.getValue(User.class);
-                                    user.setmUserId(currUser.getUid());
+                                    user.setUserId(currUser.getUid());
                                     e.onNext(user);
                                 }
 
@@ -128,7 +126,7 @@ public class FirebaseAuthProvider implements IAuthProvider {
         return Observable.create(new ObservableOnSubscribe<Boolean>() {
             @Override
             public void subscribe(ObservableEmitter<Boolean> e) throws Exception {
-                mAuth.signOut();
+                auth.signOut();
                 e.onNext(true);
             }
         });
@@ -139,7 +137,7 @@ public class FirebaseAuthProvider implements IAuthProvider {
         return Observable.create(new ObservableOnSubscribe<User>() {
             @Override
             public void subscribe(ObservableEmitter<User> e) throws Exception {
-                FirebaseUser currUser = mAuth.getCurrentUser();
+                FirebaseUser currUser = auth.getCurrentUser();
                 AuthCredential credential = EmailAuthProvider.getCredential(credentialsEmail, credentialsPassword);
 
                 currUser.reauthenticate(credential)
@@ -149,9 +147,9 @@ public class FirebaseAuthProvider implements IAuthProvider {
                                         .addOnCompleteListener(task1 -> {
                                             if (task1.isSuccessful()) {
                                                 User updateUser = new User(email, firstName, lastName, address);
-                                                updateUser.setmUserId(currUser.getUid());
+                                                updateUser.setUserId(currUser.getUid());
 
-                                                mUsersData.child(currUser.getUid())
+                                                usersData.child(currUser.getUid())
                                                         .setValue(updateUser)
                                                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                                                             @Override
@@ -179,11 +177,11 @@ public class FirebaseAuthProvider implements IAuthProvider {
 
     @Override
     public void addUserStatusChangeListener() {
-        mAuth.addAuthStateListener(mAuthListener);
+        this.auth.addAuthStateListener(this.authListener);
     }
 
     @Override
     public void removeUserStatusChangeListener() {
-        mAuth.removeAuthStateListener(mAuthListener);
+        this.auth.removeAuthStateListener(this.authListener);
     }
 }

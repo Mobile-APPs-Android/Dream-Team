@@ -10,44 +10,44 @@ import io.reactivex.schedulers.Schedulers;
 
 public class LogoutPresenter implements LogoutContract.Presenter {
 
-    private final LogoutContract.View mView;
-    private final IRepository mRepository;
+    private final LogoutContract.View view;
+    private final IRepository repository;
 
     @Inject
     public LogoutPresenter(LogoutContract.View view, IRepository repository) {
-        mView = view;
-        mRepository = repository;
+        this.view = view;
+        this.repository = repository;
     }
 
     @Inject
     void setupListener() {
-        mView.setPresenter(this);
+        this.view.setPresenter(this);
     }
 
     @Override
     public void start() {
-        mView.showDialogLoading();
-        mRepository.getCurrentUser()
+        this.view.showDialogLoading();
+        this.repository.getCurrentUser()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(user -> {
-                    mView.dismissDialog();
-                    mView.setUserNames(user.getmFirstName(), user.getmLastName());
+                    this.view.dismissDialog();
+                    this.view.setUserNames(user.getFirstName(), user.getLastName());
                 });
 
     }
 
     @Override
     public void onBtnLogout() {
-        mView.showDialogLoggingOut();
-        mRepository.logoutUser()
+        this.view.showDialogLoggingOut();
+        this.repository.logoutUser()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(isSuccess -> {
                     if (isSuccess) {
-                        mView.dismissDialog();
-                        mView.notifyUserLogout();
-                        mView.showLoginActivity();
+                        this.view.dismissDialog();
+                        this.view.notifyUserLogout();
+                        this.view.showLoginActivity();
                     }
 
                 });

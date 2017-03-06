@@ -16,7 +16,7 @@ import com.example.dreamteam.beergram.R;
 
 
 public class NewsFeedFragment extends Fragment implements NewsfeedContract.View {
-    private View rootView;
+    private View root;
     private NewsfeedContract.Presenter presenter;
     private Context context;
 
@@ -30,11 +30,11 @@ public class NewsFeedFragment extends Fragment implements NewsfeedContract.View 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        this.rootView = inflater.inflate(R.layout.fragment_news_feed, container, false);
+        this.root = inflater.inflate(R.layout.fragment_news_feed, container, false);
 
-        ListView lvPosts = (ListView) this.rootView.findViewById(R.id.lv_posts);
+        ListView lvPosts = (ListView) this.root.findViewById(R.id.lv_posts);
 
-        Button btn_post = (Button) this.rootView.findViewById(R.id.btn_post_location);
+        Button btn_post = (Button) this.root.findViewById(R.id.btn_post_location);
 
         btn_post.setOnClickListener((view) ->{
             this.presenter.postLocationToFriends();
@@ -66,7 +66,7 @@ public class NewsFeedFragment extends Fragment implements NewsfeedContract.View 
 
 
 
-        return this.rootView;
+        return this.root;
     }
 
     @Override

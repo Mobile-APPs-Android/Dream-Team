@@ -9,9 +9,6 @@ import com.example.dreamteam.beergram.R;
 import javax.inject.Inject;
 
 public class CameraActivity extends AppCompatActivity {
-//    @Inject
-//    CameraPresenter presenter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,4 +1,4 @@
-package com.example.dreamteam.beergram.data;
+package com.example.dreamteam.beergram.data.local;
 
 import com.example.dreamteam.beergram.models.Position;
 

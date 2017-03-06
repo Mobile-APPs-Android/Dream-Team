@@ -8,14 +8,14 @@ import dagger.Provides;
 @Module
 public class BeergramApplicationModule {
 
-    private final Context mContext;
+    private final Context context;
 
     public BeergramApplicationModule(Context context){
-        mContext = context;
+        this.context = context;
     }
 
     @Provides
     Context provideAppContext(){
-        return mContext;
+        return this.context;
     }
 }
