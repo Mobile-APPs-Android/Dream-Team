@@ -31,6 +31,7 @@ public class SearchFragment extends Fragment implements SearchContract.View {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         this.root = inflater.inflate(R.layout.fragment_search, container, false);
 
+//        this.presenter.getAllUsers();
 
         return this.root;
     }
