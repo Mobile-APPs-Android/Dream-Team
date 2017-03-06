@@ -10,5 +10,6 @@ public interface SearchContract {
     }
 
     interface Presenter extends BasePresenter {
+        public void getAllUsers();
     }
 }
