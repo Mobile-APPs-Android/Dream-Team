@@ -86,6 +86,10 @@ public class Repository implements IRepository {
                 .switchMap(isSuccess -> this.localRepository.getCurrentUser());
     }
 
+    public Observable<User[]> getAllUsers() {
+        return this.remoteRepository.getAllUsers();
+    }
+
     @Override
     public Observable<Boolean> savePicture(File image) {
         return this.storageRef.saveImage(image);
@@ -93,8 +97,6 @@ public class Repository implements IRepository {
 
     @Override
     public Observable<Post> postLocationToFriends() {
-//        String id = randomStringProvider.nextString();
-//        remoteRepository.addPost(position, id);
         Post post = new Post(0, 0, "");
         return this.localRepository.getCurrentPosition()
             .switchMap(position -> {

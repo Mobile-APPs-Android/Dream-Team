@@ -18,6 +18,8 @@ public interface IRepository {
 
     Observable<User> updateAccountInfo(String firstName, String lastName, String email, String address, String credentialsEmail, String credentialsPassword);
 
+    public Observable<User[]> getAllUsers();
+
     Observable<Boolean> savePicture(File image);
 
     public Observable<Post> postLocationToFriends();
