@@ -7,10 +7,12 @@ import com.example.dreamteam.beergram.BaseView;
 
 public interface ProfileContract {
     interface View extends BaseView<Presenter> {
-        //void showLogoutActivity(String searchValue);
+        //void showLogoutActivity();
     }
 
     interface Presenter extends BasePresenter {
         void setProfileValues(TextView tvEmail, TextView tvFirstName, TextView tvLastName, TextView tvAdress);
+
+        //void onBtnLogout();
     }
 }

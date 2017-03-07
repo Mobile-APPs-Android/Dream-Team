@@ -1,6 +1,7 @@
 package com.example.dreamteam.beergram.profile;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.dreamteam.beergram.R;
+import com.example.dreamteam.beergram.auth.logout.LogoutActivity;
 
 public class ProfileFragment extends Fragment implements ProfileContract.View {
     private View root;
