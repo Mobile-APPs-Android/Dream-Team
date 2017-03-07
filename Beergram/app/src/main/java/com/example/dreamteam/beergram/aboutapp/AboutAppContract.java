@@ -14,6 +14,5 @@ public interface AboutAppContract {
     }
 
     interface Presenter extends BasePresenter {
-        //void setAboutAppValues(TextView tvApp, TextView tvText);
     }
 }

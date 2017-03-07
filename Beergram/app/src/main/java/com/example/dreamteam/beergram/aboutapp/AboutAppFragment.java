@@ -33,8 +33,6 @@ public class AboutAppFragment extends Fragment implements AboutAppContract.View 
         TextView tvApp = (TextView) this.rootView.findViewById(R.id.tv_appname_value);
         TextView tvText = (TextView) this.rootView.findViewById(R.id.tv_text_value);
 
-        //this.presenter.setAboutAppValues(tvApp, tvText);
-
         return this.rootView;
     }
 

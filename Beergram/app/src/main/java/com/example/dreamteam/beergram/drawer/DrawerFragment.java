@@ -56,7 +56,7 @@ public class DrawerFragment extends Fragment {
                         this.createNewsFeedDrawerItem(),
                         this.createCameraDrawerItem(),
                         this.createContactsDrawerItem(),
-                        this.createSearchDrawerItem(),
+                        //this.createSearchDrawerItem(),
                         this.createAboutAppDrawerItem(),
                         this.createLogoutDrawerItem()
 
@@ -64,18 +64,18 @@ public class DrawerFragment extends Fragment {
                 .build();
     }
 
-    private PrimaryDrawerItem createSearchDrawerItem() {
-        return new PrimaryDrawerItem()
-                .withIdentifier(R.integer.SearchDrawerItemIdentifier)
-                .withName(R.string.SearchDrawerItemName)
-                .withIcon(R.drawable.ic_search)
-                .withSelectedIcon(R.drawable.ic_search_active)
-                .withOnDrawerItemClickListener((view, position, drawerItem) -> {
-                    Intent intent = new Intent(getContext(), SearchActivity.class);
-                    startActivity(intent);
-                    return true;
-                });
-    }
+//    private PrimaryDrawerItem createSearchDrawerItem() {
+//        return new PrimaryDrawerItem()
+//                .withIdentifier(R.integer.SearchDrawerItemIdentifier)
+//                .withName(R.string.SearchDrawerItemName)
+//                .withIcon(R.drawable.ic_search)
+//                .withSelectedIcon(R.drawable.ic_search_active)
+//                .withOnDrawerItemClickListener((view, position, drawerItem) -> {
+//                    Intent intent = new Intent(getContext(), SearchActivity.class);
+//                    startActivity(intent);
+//                    return true;
+//                });
+//    }
 
     private PrimaryDrawerItem createCameraDrawerItem() {
         return new PrimaryDrawerItem()
