@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.dreamteam.beergram.BeergramApplication;
 import com.example.dreamteam.beergram.R;
 import com.example.dreamteam.beergram.profile.DaggerProfileComponent;
+import com.example.dreamteam.beergram.utils.BeergramProgressDialog;
 
 import javax.inject.Inject;
 
@@ -13,6 +14,9 @@ public class SearchActivity extends AppCompatActivity {
 
     @Inject
     SearchPresenter presenter;
+
+    @Inject
+    BeergramProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,5 +42,8 @@ public class SearchActivity extends AppCompatActivity {
                 .searchModule(new SearchModule(searchFragment))
                 .build()
                 .inject(this);
+
+        this.dialog.setContext(this);
+        searchFragment.setDialog(this.dialog);
     }
 }

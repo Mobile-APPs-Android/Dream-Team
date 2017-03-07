@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.dreamteam.beergram.R;
 import com.example.dreamteam.beergram.models.User;
+import com.example.dreamteam.beergram.utils.BeergramProgressDialog;
 
 import java.util.ArrayList;
 
@@ -23,6 +24,8 @@ public class SearchFragment extends Fragment implements SearchContract.View {
     private View root;
     private SearchContract.Presenter presenter;
     private Context context;
+
+    private BeergramProgressDialog dialog;
 
     public SearchFragment() {
     }
@@ -51,6 +54,21 @@ public class SearchFragment extends Fragment implements SearchContract.View {
     @Override
     public void setPresenter(SearchContract.Presenter presenter) {
         this.presenter = presenter;
+    }
+
+    @Override
+    public void setDialog(BeergramProgressDialog dialog) {
+        this.dialog = dialog;
+    }
+
+    @Override
+    public void dismissDialog() {
+        this.dialog.dismissProgress();
+    }
+
+    @Override
+    public void showDialogForSearching() {
+        this.dialog.showProgress(getString(R.string.searching_text));
     }
 
     public void setupAdapter(ArrayList<String> userEmails) {

@@ -35,11 +35,13 @@ public class SearchPresenter implements SearchContract.Presenter {
     }
 
     public void getAllUsers(String searchValue) {
+        this.view.showDialogForSearching();
         this.repository.getAllUsers()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(userEmails -> {
                 userEmails = filterUserEmails(userEmails, searchValue);
+                this.view.dismissDialog();
                 this.view.setupAdapter(userEmails);
             });
     }
