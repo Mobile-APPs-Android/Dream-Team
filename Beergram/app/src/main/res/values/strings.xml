@@ -29,6 +29,7 @@
     <string name="loading_creating_user_text">Creating user…</string>
     <string name="loading_logging_in_text">Logging in…</string>
     <string name="loading_text">Loading..</string>
+    <string name="searching_text">Searching...</string>
     <string name="loading_no_text" />
     <string name="logout_btn_text">Logout</string>
     <string name="logout_form_title_text">Are you sure you want to logout?</string>
