@@ -10,8 +10,6 @@ public interface ProfileContract {
     interface View extends BaseView<Presenter> {
         void setDialog(BeergramProgressDialog dialog);
 
-        void showDialogLoading();
-
         void showDialogLoggingOut();
 
         void dismissDialog();
@@ -20,7 +18,6 @@ public interface ProfileContract {
 
         void showLoginActivity();
     }
-
     interface Presenter extends BasePresenter {
         void setProfileValues(TextView tvEmail, TextView tvFirstName, TextView tvLastName, TextView tvAdress);
 

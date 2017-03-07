@@ -67,11 +67,6 @@ public class ProfileFragment extends Fragment implements ProfileContract.View {
     }
 
     @Override
-    public void showDialogLoading() {
-        this.dialog.showProgress(getString(R.string.loading_text));
-    }
-
-    @Override
     public void showDialogLoggingOut() {
         this.dialog.showProgress(getString(R.string.loading_logging_out_text));
     }
