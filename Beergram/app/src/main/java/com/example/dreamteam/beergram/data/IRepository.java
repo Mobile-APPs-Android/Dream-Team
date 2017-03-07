@@ -1,5 +1,8 @@
 package com.example.dreamteam.beergram.data;
 
+import android.content.ContentResolver;
+import android.database.Cursor;
+
 import com.example.dreamteam.beergram.models.Position;
 import com.example.dreamteam.beergram.models.Post;
 import com.example.dreamteam.beergram.models.User;
@@ -33,4 +36,6 @@ public interface IRepository {
     Observable<Boolean> connectLocationListener();
 
     Observable<Boolean> disconnectLocationListener();
+
+    public Observable<ArrayList<String>> getContacts(ContentResolver resolver);
 }

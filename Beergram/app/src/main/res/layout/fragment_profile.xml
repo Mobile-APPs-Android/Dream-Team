@@ -149,7 +149,7 @@
                 android:layout_marginBottom="@dimen/margin_3"
                 />
             <Button
-                android:id="@+id/btn_logout"
+                android:id="@+id/profile_btn_logout"
                 android:background="@color/btn_bg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

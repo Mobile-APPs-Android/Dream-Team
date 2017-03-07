@@ -12,6 +12,7 @@ import com.example.dreamteam.beergram.R;
 import com.example.dreamteam.beergram.aboutapp.AboutAppActivity;
 import com.example.dreamteam.beergram.auth.logout.LogoutActivity;
 import com.example.dreamteam.beergram.camera.CameraActivity;
+import com.example.dreamteam.beergram.contacts.ContactsActivity;
 import com.example.dreamteam.beergram.newsfeed.NewsfeedActivity;
 import com.example.dreamteam.beergram.profile.ProfileActivity;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -54,8 +55,8 @@ public class DrawerFragment extends Fragment {
                         this.createNewsFeedDrawerItem(),
                         this.createCameraDrawerItem(),
                         this.createAboutAppDrawerItem(),
-                        this.createLogoutDrawerItem()
-                        //this.createContactsDrawerItem()
+                        this.createLogoutDrawerItem(),
+                        this.createContactsDrawerItem()
                 )
                 .build();
     }
@@ -125,17 +126,17 @@ public class DrawerFragment extends Fragment {
                 });
     }
 
-//    private PrimaryDrawerItem createContactsDrawerItem() {
-//        return new PrimaryDrawerItem()
-//                .withIdentifier(R.integer.ContactsDrawerItemIdentifier)
-//                .withName(R.string.ContactsDrawerItemName)
-//                .withIcon(R.drawable.ic_contactsss)
-//                .withSelectedIcon(R.drawable.ic_contacts_active)
-//                .withOnDrawerItemClickListener((view, position, drawerItem) -> {
-//                    Intent intent = new Intent(getContext(), ContactsActivity.class);
-//                    startActivity(intent);
-//                    return true;
-//                });
-//    }
+    private PrimaryDrawerItem createContactsDrawerItem() {
+        return new PrimaryDrawerItem()
+                .withIdentifier(R.integer.ContactsItemIdentifier)
+                .withName(R.string.ContactsDrawerItemName)
+                .withIcon(R.drawable.ic_contactsss)
+                .withSelectedIcon(R.drawable.ic_contacts_active)
+                .withOnDrawerItemClickListener((view, position, drawerItem) -> {
+                    Intent intent = new Intent(getContext(), ContactsActivity.class);
+                    startActivity(intent);
+                    return true;
+                });
+    }
 
 }

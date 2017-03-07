@@ -6,6 +6,7 @@
     <string name="NewsFeedDrawerItemName">Activity feed</string>
     <string name="ProfileDrawerItemName">My Profile</string>
     <string name="AboutAppDrawerItemName">About the APP</string>
+    <string name="ContactsDrawerItemName">Contacts</string>
     <string name="LogoutDrawerItemName">Logout</string>
 
     <string name="email_example_text">Email</string>

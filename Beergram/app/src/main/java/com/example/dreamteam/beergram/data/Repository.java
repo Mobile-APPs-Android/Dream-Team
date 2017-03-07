@@ -1,5 +1,8 @@
 package com.example.dreamteam.beergram.data;
 
+import android.content.ContentResolver;
+import android.database.Cursor;
+import android.provider.ContactsContract;
 import android.util.Log;
 
 import com.example.dreamteam.beergram.data.authprovider.IAuthProvider;
@@ -18,6 +21,8 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
 
 @Singleton
 public class Repository implements IRepository {
@@ -127,5 +132,23 @@ public class Repository implements IRepository {
     @Override
     public Observable<Boolean> disconnectLocationListener() {
         return this.localRepository.disconnectLocationListener();
+    }
+
+    public Observable<ArrayList<String>> getContacts(ContentResolver resolver) {
+        return Observable.create(new ObservableOnSubscribe<ArrayList<String>>() {
+            @Override
+            public void subscribe(ObservableEmitter<ArrayList<String>> e) throws Exception {
+                ArrayList<String> contactNames = new ArrayList<String>();
+                Cursor phones = resolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null,null,null, null);
+                while (phones.moveToNext())
+                {
+                    String name=phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+                    contactNames.add(name);
+                    String phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                }
+                phones.close();
+                e.onNext(contactNames);
+            }
+        });
     }
 }

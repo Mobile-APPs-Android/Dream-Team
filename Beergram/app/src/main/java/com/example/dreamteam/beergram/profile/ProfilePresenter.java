@@ -39,4 +39,20 @@ public class ProfilePresenter implements ProfileContract.Presenter {
                     tvAdress.setText(user.getAddress());
                 });
     }
+    @Override
+    public void onBtnLogout() {
+        this.view.showDialogLoggingOut();
+        this.repository.logoutUser()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(isSuccess -> {
+                    if (isSuccess) {
+                        this.view.dismissDialog();
+                        this.view.notifyUserLogout();
+                        this.view.showLoginActivity();
+                    }
+                });
+
+    }
+
 }
