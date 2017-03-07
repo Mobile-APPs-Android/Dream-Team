@@ -30,8 +30,7 @@ How you would make money?
 You would be able to make money on this app by either charging each establishment a small fee to have their details put in your database or you would simply be able to charge each customer to download the app.
 
 ###Deliverables
-  * Record a short video showcasing your application - <a href="#">Beergram video</a>
-  * Registered application at Telerik Academy Showcase System - <a href="#">Showcase System - Beergram</a>
-  * Link for the GitHub repository of our App - <a href="#">Beergram GitHub repository</a>
-  * Link to the presentation - <a href="#">Beergram presentation</a>
-  * Hosted application on a server, link - <a href="#">Beergram hosted on Heroku</a>
+  * Record a short video uploaded on YouTube your application - <a href="https://youtu.be/LhRoncUMfLk">Beergram video</a>
+  * Registered application at Telerik Academy Showcase System - <a href="http://best.telerikacademy.com/projects/509/Beergram">Showcase System - Beergram</a>
+  * Link for the GitHub repository of our App - <a href="https://github.com/Mobile-APPs-Android/Dream-Team">Beergram GitHub repository</a>
+  * Link to the logo - <a href="https://ibb.co/cPo0gF">Beergram Logo Icon</a>
