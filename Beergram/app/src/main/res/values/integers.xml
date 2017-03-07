@@ -6,5 +6,6 @@
     <integer name="AboutAppDrawerItemIdentifier">4</integer>
     <integer name="ContactsItemIdentifier">5</integer>
     <integer name="LogoutDrawerItemIdentifier">6</integer>
+    <integer name="SearchDrawerItemIdentifier">7</integer>
 </resources>
 

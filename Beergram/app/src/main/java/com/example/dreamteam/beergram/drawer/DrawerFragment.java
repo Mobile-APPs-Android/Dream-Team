@@ -15,6 +15,7 @@ import com.example.dreamteam.beergram.camera.CameraActivity;
 import com.example.dreamteam.beergram.contacts.ContactsActivity;
 import com.example.dreamteam.beergram.newsfeed.NewsfeedActivity;
 import com.example.dreamteam.beergram.profile.ProfileActivity;
+import com.example.dreamteam.beergram.search.SearchActivity;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 
@@ -54,11 +55,26 @@ public class DrawerFragment extends Fragment {
                         this.createProfileDrawerItem(),
                         this.createNewsFeedDrawerItem(),
                         this.createCameraDrawerItem(),
+                        this.createContactsDrawerItem(),
+                        this.createSearchDrawerItem(),
                         this.createAboutAppDrawerItem(),
-                        this.createLogoutDrawerItem(),
-                        this.createContactsDrawerItem()
+                        this.createLogoutDrawerItem()
+
                 )
                 .build();
+    }
+
+    private PrimaryDrawerItem createSearchDrawerItem() {
+        return new PrimaryDrawerItem()
+                .withIdentifier(R.integer.SearchDrawerItemIdentifier)
+                .withName(R.string.SearchDrawerItemName)
+                .withIcon(R.drawable.ic_search)
+                .withSelectedIcon(R.drawable.ic_search_active)
+                .withOnDrawerItemClickListener((view, position, drawerItem) -> {
+                    Intent intent = new Intent(getContext(), SearchActivity.class);
+                    startActivity(intent);
+                    return true;
+                });
     }
 
     private PrimaryDrawerItem createCameraDrawerItem() {
