@@ -5,14 +5,14 @@
 
 <h1 align="center">Mobile Applications for Android "Dream Team"</h1>
 
-###:mortar_board:Team Members
+### :mortar_board:Team Members
 | Name              | Academy Username      	|
 |-------------------|-------------------|
 |                   | :white_check_mark:|
 |Georgi Karaboichev |__prot3ct__	        |
 |Niya Keranova|__Nayata__       	|	
 
-##<a href="https://github.com/TelerikAcademy/Mobile-Applications-for-Android/blob/master/Course-Project/LOB_APP_REQUIREMENTS.md">Project Requirements</a>
+## <a href="https://github.com/TelerikAcademy/Mobile-Applications-for-Android/blob/master/Course-Project/LOB_APP_REQUIREMENTS.md">Project Requirements</a>
 
 ## Dream-Team
 Created Line-of-business (LoB) Application Design and implement a native mobile application for Android. The application is touch-friendly and provide actual functionality which users can take advantage of. That is, the application is of value to the end user of a tablet or smartphone, enabling them to consume/produce real content.
@@ -29,7 +29,7 @@ How you would make money?
 
 You would be able to make money on this app by either charging each establishment a small fee to have their details put in your database or you would simply be able to charge each customer to download the app.
 
-###Deliverables
+### Deliverables
   * Record a short video uploaded on YouTube your application - <a href="https://youtu.be/LhRoncUMfLk">Beergram video</a>
   * Registered application at Telerik Academy Showcase System - <a href="http://best.telerikacademy.com/projects/509/Beergram">Showcase System - Beergram</a>
   * Link for the GitHub repository of our App - <a href="https://github.com/Mobile-APPs-Android/Dream-Team">Beergram GitHub repository</a>
